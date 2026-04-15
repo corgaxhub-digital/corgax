@@ -273,11 +273,7 @@ body.light .team-avatar { background: var(--bg-icon-box); }
 .team-avatar svg { width: 30px; height: 30px; stroke: currentColor; stroke-width: 2; fill: none; transform: rotate(-45deg); transition: transform 0.5s ease; }
 .team-card:hover .team-avatar svg { transform: rotate(0deg); }
 .team-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--text-main); letter-spacing: -0.02em; }
-
-/* SOLUCIÓN: Rojo más suave y legible para modo oscuro, rojo corporativo normal en claro */
-.team-card p { font-size: 0.85rem; color: #f45b73; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
-body.light .team-card p { color: var(--brand-red); }
-
+.team-card p { font-size: 0.85rem; color: var(--brand-red); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
 .cta-wrapper { padding-top: 60px; padding-bottom: 40px; }
 .cta-split-box { display: flex; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-card); background: var(--bg-card); position: relative; z-index: 1; box-shadow: var(--shadow-subtle); }
 body.light .cta-split-box { border: 1px solid var(--border-light); background: #ffffff; }
@@ -627,21 +623,21 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 
   <section class="infra-section">
     <div class="section-title" style="text-align: center; padding-bottom: 0;">
-      <h2>Corporate <span>Core</span></h2>
-      <p style="margin: 0 auto;">Architecture designed for performance, scalability, and content distribution.</p>
+      <h2>Núcleo <span>Corporativo</span></h2>
+      <p style="margin: 0 auto;">Arquitectura diseñada para el rendimiento, la escalabilidad y la distribución de contenido.</p>
     </div>
     <div class="infra-grid">
       <div class="infra-card">
-        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Modular Design</h3>
-        <p>Each platform within CORGAX operates as an independent yet interconnected environment.</p>
+        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Diseño Modular</h3>
+        <p>Cada plataforma dentro de CORGAX opera como un entorno independiente pero interconectado.</p>
       </div>
       <div class="infra-card">
-        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> High Performance</h3>
-        <p>Optimized environments to ensure agile loading times and fluid information consumption.</p>
+        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> Alto Rendimiento</h3>
+        <p>Entornos optimizados para garantizar una carga ágil y un consumo fluido de la información.</p>
       </div>
       <div class="infra-card">
-        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> Adaptive UI/UX</h3>
-        <p>Interfaces developed under professional principles, ensuring readability on any device.</p>
+        <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> UI/UX Adaptativo</h3>
+        <p>Interfaces desarrolladas bajo principios profesionales, garantizando legibilidad en cualquier dispositivo.</p>
       </div>
     </div>
   </section>
