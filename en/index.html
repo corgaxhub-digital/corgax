@@ -4,71 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="google" content="notranslate">
-
-<!-- ========================================== -->
-<!-- === ADVANCED SEO & META TAGS === -->
-<!-- ========================================== -->
 <title>CORGAX | Central Ecosystem Hub</title>
-<meta name="description" content="A structure organizing informative content, analysis, and technology, adaptable to various formats and platforms. The central hub of the Corgax ecosystem.">
-<meta name="keywords" content="Corgax, digital ecosystem, news, analysis, technology, finance, global, Peru, Corgiva Group">
+<meta name="description" content="Central platform organizing information, analysis, and technology into independent, adaptable spaces.">
+<meta name="keywords" content="Corgax, digital ecosystem, news, analysis, technology, finance, Peru, global, Corgiva Group">
 <meta name="author" content="Corgiva Group">
 <meta name="robots" content="index, follow">
-
-<!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://corgax.com/en/">
+<meta property="og:url" content="https://corgax.com/">
 <meta property="og:title" content="CORGAX | Central Ecosystem Hub">
-<meta property="og:description" content="A structure organizing informative content, analysis, and technology, adaptable to various formats and platforms.">
-<!-- <meta property="og:image" content="URL_OF_YOUR_PREVIEW_IMAGE.jpg"> -->
-
-<!-- ========================================== -->
-<!-- === FAVICON SPACE === -->
-<!-- ========================================== -->
-<!-- Replace the paths when you have your ico/png/svg files -->
+<meta property="og:description" content="Central platform organizing information, analysis, and technology into independent, adaptable spaces.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-<link rel="canonical" href="https://corgax.com/en/"> 
+<link rel="canonical" href="https://corgax.com/"> 
 <meta name="theme-color" content="#12141c" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-
-<!-- Typography: Plus Jakarta Sans (Body) and Archivo (Corgiva Group Signature) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
 <style>
-/* ============================= */
-/* CORGAX ELITE - CLEAN SaaS     */
-/* ============================= */
-
 :root {
-  /* TUTAYAQ (Deep Corporate) */
   --bg-body: #12141c; 
   --bg-section: transparent;
   --bg-card: #1a1d27;
   --bg-card-hover: #222634;
   --bg-panel: #1a1d27;
   --bg-icon-box: rgba(225, 6, 44, 0.1);
-
   --border-light: rgba(255, 255, 255, 0.08);
   --border-card: rgba(255, 255, 255, 0.04);
   --border-hover: rgba(225, 6, 44, 0.5);
-
   --text-main: #ffffff;
   --text-secondary: #A1A1AA;
   --text-muted: #6b7280;
-
   --brand-red: #E1062C;
   --brand-red-hover: #ff1a43;
   --gradient-red: linear-gradient(135deg, #E1062C, #ff4d6d);
-
   --shadow-subtle: 0 10px 40px -10px rgba(0,0,0,0.5);
   --shadow-hover: 0 20px 40px -10px rgba(225, 6, 44, 0.15);
 }
-
-/* K'ANCHAY (Pure Clean) */
 body.light {
   --bg-body: #ffffff;
   --bg-section: transparent;
@@ -76,29 +49,22 @@ body.light {
   --bg-card-hover: #f8fafc;
   --bg-panel: #ffffff;
   --bg-icon-box: #f1f5f9;
-
   --border-light: #EAEAEA;
   --border-card: #EAEAEA; 
   --border-hover: #cbd5e1;
-
   --text-main: #000000;
   --text-secondary: #404040;
   --text-muted: #94a3b8;
-
   --brand-red: #d90429;
   --brand-red-hover: #e60a33;
   --gradient-red: linear-gradient(135deg, #d90429, #ef233c);
-
   --shadow-subtle: 0 8px 30px rgba(15, 23, 42, 0.04);
   --shadow-hover: 0 15px 35px rgba(15, 23, 42, 0.08);
 }
-
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 *{ margin:0; padding:0; box-sizing:border-box; }
-
 * { -webkit-tap-highlight-color: transparent !important; }
 *:focus { outline: none !important; }
-
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: var(--bg-body);
@@ -108,34 +74,25 @@ body {
   transition: background 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
 }
-
-/* ======================================================== */
-/* === TOP BAR (FULL-WIDTH CRYSTAL RECTANGLE) === */
-/* ======================================================== */
 .header {
   position: fixed; 
   top: 0; left: 0; right: 0; width: 100%;
   display: flex; justify-content: center;
   z-index: 1000;
   height: 76px;
-  
   background: rgba(18, 20, 28, 0.75);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-light);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-body.light .header {
-  background: rgba(255, 255, 255, 0.85);
-}
-
+body.light .header { background: rgba(255, 255, 255, 0.85); }
 .header-inner {
   display: flex; justify-content: space-between; align-items: center;
   width: 100%; max-width: 1240px;
   height: 100%;
   padding: 0 32px;
 }
-
 .header.scrolled {
   background: rgba(18, 20, 28, 0.98);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -145,7 +102,6 @@ body.light .header.scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
-
 .logo {
   text-decoration: none; color: var(--text-main);
   cursor: pointer;
@@ -155,13 +111,7 @@ body.light .header.scrolled {
   height: 100%;
 }
 .logo:hover { opacity: 0.8; }
-
-.logo-svg-full {
-  height: 1.3rem; 
-  width: auto;
-  display: block;
-}
-
+.logo-svg-full { height: 1.3rem; width: auto; display: block; }
 .nav-box { display: flex; align-items: center; height: 100%; }
 .nav-links { display: flex; gap: 4px; align-items: center; }
 .nav-links > a {
@@ -173,7 +123,6 @@ body.light .header.scrolled {
 }
 .nav-links > a:hover, .nav-links > a.active { color: var(--text-main); background: rgba(255,255,255,0.05); }
 body.light .nav-links > a:hover, body.light .nav-links > a.active { background: rgba(0,0,0,0.04); }
-
 .nav-dropdown { position: relative; display: inline-block; }
 .nav-dropdown-btn {
   padding: 8px 16px; border-radius: 8px;
@@ -187,7 +136,6 @@ body.light .nav-links > a:hover, body.light .nav-links > a.active { background: 
 .nav-dropdown-btn:hover, .nav-dropdown-btn.active { background: rgba(225, 6, 44, 0.1); }
 .nav-dropdown-btn svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 3; fill: none; transition: transform 0.3s ease; }
 .nav-dropdown.open .nav-dropdown-btn svg { transform: rotate(180deg); }
-
 .nav-dropdown-content {
   position: absolute; top: calc(100% + 15px); right: 0;
   background: var(--bg-panel); border: 1px solid var(--border-light);
@@ -200,7 +148,6 @@ body.light .nav-links > a:hover, body.light .nav-links > a.active { background: 
 }
 body.light .nav-dropdown-content { background: #ffffff; }
 .nav-dropdown.open .nav-dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
-
 .nav-links .nav-dropdown-content a {
   display: flex; justify-content: flex-start; align-items: center;
   padding: 12px 16px; margin: 2px 0; border-radius: 8px;
@@ -210,7 +157,6 @@ body.light .nav-dropdown-content { background: #ffffff; }
 .nav-links .nav-dropdown-content a:hover {
   background: transparent; color: var(--brand-red); transform: translateX(5px);
 }
-
 .nav-divider { width: 1px; height: 16px; background: var(--border-light); margin: 0 12px; }
 .nav-tools { display: flex; gap: 4px; }
 .nav-btn {
@@ -224,7 +170,6 @@ body.light .nav-dropdown-content { background: #ffffff; }
 .nav-btn:hover { background: rgba(255,255,255,0.05); }
 body.light .nav-btn:hover { background: rgba(0,0,0,0.04); }
 #theme:hover { color: var(--brand-red); }
-
 .menu-btn { display: none; padding: 0; border: none; color: var(--text-main); }
 .menu-icon { width: 24px; height: 20px; position: relative; }
 .menu-icon .line { 
@@ -237,21 +182,14 @@ body.light .nav-btn:hover { background: rgba(0,0,0,0.04); }
 .menu-btn.nav-active .line-1 { top: 9px; transform: rotate(45deg); width: 100%; }
 .menu-btn.nav-active .line-2 { opacity: 0; transform: translateX(10px); }
 .menu-btn.nav-active .line-3 { top: 9px; transform: rotate(-45deg); width: 100%; }
-
 .icon-svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 .icon-moon { display: none; }
 body.light .icon-sun { display: none; }
 body.light .icon-moon { display: block; }
-
 .view-section { display: none; animation: fadeInView 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .view-section.active { display: block; }
 @keyframes fadeInView { from { opacity: 0; transform: translateY(15px); filter: blur(4px); } to { opacity: 1; transform: translateY(0); filter: blur(0); } }
-
 section { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
-
-/* ======================================================== */
-/* === GIANT TITLES (EDITORIAL STYLE) === */
-/* ======================================================== */
 .section-title { padding: 40px 0 20px; }
 h2 { 
   font-size: clamp(3rem, 7vw, 4.8rem);
@@ -261,13 +199,10 @@ h2 {
   margin-bottom: 16px; 
 }
 h2 span { color: var(--brand-red); }
-
 .hero-centered { text-align: center; padding: 160px 0 80px; display: flex; flex-direction: column; align-items: center; position: relative; }
 .hero-centered h1 { margin-bottom: 24px; display: flex; align-items: center; justify-content: center; }
 .hero-centered h1 .logo-svg-full { height: clamp(3.5rem, 10vw, 6rem); filter: drop-shadow(var(--shadow-subtle)); }
 .hero-centered p { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; color: var(--text-secondary); max-width: 750px; margin-bottom: 40px; line-height: 1.6; }
-
-/* === BENTO GRID === */
 .bento-grid { display: grid; grid-template-columns: repeat(1, 1fr); gap: 24px; padding: 0 0 40px; }
 @media (min-width: 992px) {
   .bento-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 320px; }
@@ -290,7 +225,6 @@ body.light .bento-overlay { background: linear-gradient(to top, rgba(0,0,0,0.85)
 .bento-arrow { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); transition: background 0.3s ease; }
 .bento-card:hover .bento-arrow { background: var(--brand-red); color: white; }
 .bento-arrow svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2.5; fill: none; }
-
 .bento-solid { background: var(--bg-card); justify-content: space-between; cursor: default; }
 .bento-solid:hover { transform: translateY(-8px); border-color: var(--border-light); box-shadow: var(--shadow-hover); }
 body.light .bento-solid:hover { border-color: var(--border-hover); }
@@ -298,23 +232,34 @@ body.light .bento-solid:hover { border-color: var(--border-hover); }
 .bento-solid p { color: var(--text-secondary); font-weight: 500; }
 
 .social-grid { display: flex; gap: 12px; margin-top: auto; }
+/* Solid Interactive Facebook Button */
 .social-btn { 
-  width: 46px; 
   height: 46px; 
+  padding: 0 24px;
   border-radius: 12px; 
   border: 2px solid var(--brand-red); 
-  background: transparent;
-  color: var(--brand-red); 
+  background: var(--brand-red); 
+  color: #ffffff; 
   display: inline-flex; 
   align-items: center; 
   justify-content: center; 
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
   transition: all 0.3s ease; 
   text-decoration: none; 
+  box-shadow: 0 4px 15px rgba(225, 6, 44, 0.15);
 }
-.social-btn:hover { background: var(--brand-red); color: #fff; transform: translateY(-3px); }
-.social-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; transition: color 0.3s ease; }
+.social-btn:hover { 
+  background: var(--brand-red-hover); 
+  border-color: var(--brand-red-hover);
+  color: #fff; 
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(225, 6, 44, 0.35);
+}
+.social-btn svg { width: 22px; height: 22px; transition: color 0.3s ease; }
 
-/* === INFRASTRUCTURE AND STRUCTURE === */
 .infra-section { padding-top: 60px; padding-bottom: 60px; }
 .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
 .infra-card { padding: 40px; border-radius: 20px; border: 1px solid var(--border-card); background: var(--bg-card); box-shadow: var(--shadow-subtle); transition: all 0.4s ease; }
@@ -322,15 +267,10 @@ body.light .infra-card { border: 1px solid var(--border-light); }
 .infra-card:hover { border-color: var(--border-hover); transform: translateY(-8px); box-shadow: var(--shadow-hover); }
 .infra-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 12px;}
 .infra-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; font-weight: 500; }
-
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 40px; }
 .team-card { padding: 40px 30px; border-radius: 20px; border: 1px solid var(--border-card); background: var(--bg-card); box-shadow: var(--shadow-subtle); text-align: center; transition: all 0.4s ease; }
 body.light .team-card { border: 1px solid var(--border-light); }
 .team-card:hover { transform: translateY(-8px); border-color: var(--border-hover); box-shadow: var(--shadow-hover); }
-
-/* ======================================================== */
-/* STRUCTURE AVATARS (Maintained color, smooth rotation)    */
-/* ======================================================== */
 .team-avatar { 
   width: 70px; height: 70px; border-radius: 20px; 
   margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; 
@@ -345,26 +285,22 @@ body.light .team-avatar { background: var(--bg-icon-box); }
 .team-avatar svg { width: 30px; height: 30px; stroke: currentColor; stroke-width: 2; fill: none; transform: rotate(-45deg); transition: transform 0.5s ease; }
 .team-card:hover .team-avatar svg { transform: rotate(0deg); }
 .team-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--text-main); letter-spacing: -0.02em; }
-.team-card p { font-size: 0.85rem; color: var(--brand-red); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
+.team-card p { font-size: 0.85rem; color: #f45b73; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
+body.light .team-card p { color: var(--brand-red); }
 
-/* === DOUBLE CONTACT CTA === */
 .cta-wrapper { padding-top: 60px; padding-bottom: 40px; }
 .cta-split-box { display: flex; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-card); background: var(--bg-card); position: relative; z-index: 1; box-shadow: var(--shadow-subtle); }
 body.light .cta-split-box { border: 1px solid var(--border-light); background: #ffffff; }
 .cta-split-box::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-red); z-index: 2; pointer-events: none; }
 .cta-split-box::before { content: ''; position: absolute; top: -50px; bottom: -50px; left: 50%; right: -200px; background: rgba(255,255,255,0.02); border-left: 1px solid var(--border-card); transform: skewX(-15deg); z-index: -1; }
 body.light .cta-split-box::before { background: #f1f5f9; border-left: 1px solid var(--border-light); }
-
 .cta-half { flex: 1; padding: 80px 40px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; background: transparent !important; }
 .cta-half h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em; }
 .cta-half p { font-size: 1.05rem; font-weight: 500; color: var(--text-secondary); max-width: 400px; margin: 0 auto 30px; line-height: 1.6; }
-
 .btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: var(--text-main); color: var(--bg-body) !important; font-weight: 800; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 14px; border: none; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: var(--shadow-subtle); }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); opacity: 0.9; }
 body.light .btn-primary { background: var(--brand-red); color: white !important; }
 body.light .btn-primary:hover { background: var(--brand-red-hover); box-shadow: 0 10px 25px rgba(225,6,44,0.3); }
-
-/* === VIEW: CONTACT === */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; padding: 0 0 80px 0; }
 .clean-card { background: var(--bg-card); padding: 40px 32px; border-radius: 24px; border: 1px solid var(--border-card); box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; transition: all 0.4s ease; }
 .clean-card:hover { transform: translateY(-8px); background: var(--bg-card-hover); box-shadow: var(--shadow-hover); border-color: var(--border-hover); }
@@ -375,8 +311,6 @@ body.light .clean-card:hover { border-color: var(--border-hover); }
 .icon-box { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 14px; background: var(--bg-icon-box); margin-bottom: 24px; transition: transform 0.3s ease; }
 .clean-card:hover .icon-box { transform: scale(1.05) rotate(-5deg); }
 .cat-icon { width: 24px; height: 24px; stroke: var(--brand-red); stroke-width: 2.5; fill: none; }
-
-/* === POWERED BY === */
 .powered-by-section { text-align: center; padding: 60px 24px 20px; }
 .powered-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 30px; font-weight: 700; }
 .powered-logos { display: flex; justify-content: center; align-items: center; gap: 50px; flex-wrap: wrap; }
@@ -405,14 +339,17 @@ body.light .site-footer {
 .footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
 .link-group { display: flex; flex-direction: column; gap: 12px; }
 .link-group h4 { font-size: 0.95rem; color: var(--text-main); margin: 0; padding: 0; background: none; border: none; letter-spacing: 0.05em; display: block; width: auto;}
+
 .link-group a { display: block; font-weight: 500; color: var(--text-secondary); text-decoration: none !important; font-size: 0.9rem; transition: color 0.3s ease; cursor: pointer; }
-.link-group a:hover { color: var(--brand-red) !important; }
+.link-group a:hover, .link-group a.active-link { color: var(--brand-red) !important; }
+
+.signature-group { gap: 2px !important; }
 
 a.corgiva-signature { 
   font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif !important; 
   font-weight: 800 !important; 
-  font-size: 1.15rem !important; 
-  letter-spacing: -0.02em !important; 
+  font-size: 1.5rem !important; 
+  letter-spacing: -0.03em !important; 
   text-decoration: none !important; 
   color: var(--text-main) !important; 
   transition: all 0.3s ease !important; 
@@ -435,7 +372,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
   color: var(--text-main) !important; 
 }
 
-.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 8px; }
+.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0; }
 .footer-bottom { 
   max-width: 1240px; 
   margin: 60px auto 0; 
@@ -565,7 +502,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 
 <div class="header" id="mainHeader">
   <div class="header-inner">
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg">
         <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
           <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
@@ -582,7 +519,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
     
     <div class="nav-box">
       <nav class="nav-links" id="navLinks">
-        <a href="index.html" id="nav-home" class="active">Home</a>
+        <a href="/" id="nav-home" class="active">Home</a>
         <a href="corgax24.html" id="nav-corgax24">Corgax24</a>
         <a href="corgax-prime.html" id="nav-corgax-prime">Corgax Prime</a>
         <a href="corgax-space.html" id="nav-corgax-space">Corgax Space</a>
@@ -600,7 +537,6 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
       </nav>
       <div class="nav-divider"></div>
       <div class="nav-tools">
-        <!-- Return to Spanish version -->
         <a href="/" class="nav-btn">ES</a>
         <button class="nav-btn" id="theme" title="Light / Dark Mode">      
           <svg class="icon-svg icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>      
@@ -635,50 +571,51 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
           </g>
         </svg>
       </h1>   
-      <p>A structure organizing informative content, analysis, and technology, adaptable to various formats and platforms.</p>
+      <p>Central platform organizing information, analysis, and technology into independent, adaptable spaces.</p>
       <button onclick="document.getElementById('bento').scrollIntoView()" class="btn-primary">Explore Ecosystem</button>
     </div>
 
     <div class="bento-grid" id="bento">
-      <div class="bento-card bento-corgax24" onclick="window.location.href='corgax24.html'">
+      <div class="bento-card bento-corgax24" onclick="window.location.href='corgax24'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1200')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
           <h3>Corgax24</h3>
-          <p>Current events from Peru, Chile, and the Global sphere in differentiated spaces, alongside sections like Corgax24 Sports, with coverage in English and Spanish.</p>
+          <p>Clear and direct tracking of current events in Peru, Chile, and the global landscape. Structured information in English and Spanish, featuring dedicated sports sections.</p>
           <div class="bento-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
         </div>
       </div>
       
-      <div class="bento-card bento-corgax-prime" onclick="window.location.href='corgax-prime.html'">
+      <div class="bento-card bento-corgax-prime" onclick="window.location.href='corgax-prime'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
           <h3>Corgax Prime</h3>
-          <p>Content focused on finance, health, religion, personal growth, and education, with an analytical approach.</p>
+          <p>In-depth reading focused on integral development. Articles and guides designed to provide practical utility in finance, health, reflection, education, and personal growth.</p>
           <div class="bento-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
         </div>
       </div>
 
-      <div class="bento-card bento-corgax-space" onclick="window.location.href='corgax-space.html'">
+      <div class="bento-card bento-corgax-space" onclick="window.location.href='corgax-space'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
           <h3>Corgax Space</h3>
-          <p>Content covering gaming, technology, web, apps, and streaming, developed with an analytical focus.</p>
+          <p>Constant exploration of digital culture. Practical information and technical reviews on gaming, web development, apps, and streaming ecosystems.</p>
           <div class="bento-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
         </div>
       </div>
 
       <div class="bento-card bento-solid bento-info-1">
         <div class="bento-content">
-          <h3 style="font-size: 1.5rem;">Social Media</h3>
-          <p>Connect with the CORGAX ecosystem in real time and explore our structure across digital platforms.</p>
+          <h3 style="font-size: 1.5rem;">Digital Channels</h3>
+          <p>Follow the latest updates and content distribution across our social media networks.</p>
           <div class="social-grid">
             <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">
               <svg viewBox="0 0 24 24" style="fill: currentColor; stroke: none;">
                 <path d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73z"/>
               </svg>
+              Facebook
             </a>
           </div>
         </div>
@@ -687,16 +624,16 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
       <div class="bento-card bento-solid bento-info-2">
         <div class="bento-content">
           <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg></div>
-          <h3 style="font-size: 1.5rem;">Global Presence</h3>
-          <p>Optimized to serve localized content with editions fully prepared in English and Spanish.</p>
+          <h3 style="font-size: 1.5rem;">Reach and Languages</h3>
+          <p>A platform built for both local and international audiences, with content editions in English and Spanish.</p>
         </div>
       </div>
 
       <div class="bento-card bento-solid bento-info-3">
         <div class="bento-content">
           <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
-          <h3 style="font-size: 1.5rem;">Infrastructure</h3>
-          <p>Corporate design based on scalability and the organized distribution of content.</p>
+          <h3 style="font-size: 1.5rem;">Design & Navigation</h3>
+          <p>A web environment designed to provide a seamless, clean, and distraction-free experience across all our services.</p>
         </div>
       </div>
     </div>
@@ -705,7 +642,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
   <section class="infra-section">
     <div class="section-title" style="text-align: center; padding-bottom: 0;">
       <h2>Corporate <span>Core</span></h2>
-      <p style="margin: 0 auto;">Architecture designed for performance, scalability, and content distribution.</p>
+      <p style="margin: 0 auto;">Architecture designed for high performance, scalability, and seamless content distribution.</p>
     </div>
     <div class="infra-grid">
       <div class="infra-card">
@@ -714,19 +651,19 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
       </div>
       <div class="infra-card">
         <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg> High Performance</h3>
-        <p>Optimized environments to ensure agile loading times and fluid information consumption.</p>
+        <p>Optimized environments ensuring fast loading times and a fluid information consumption experience.</p>
       </div>
       <div class="infra-card">
         <h3><svg class="icon-svg" style="stroke:var(--brand-red)" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg> Adaptive UI/UX</h3>
-        <p>Interfaces developed under professional principles, ensuring readability on any device.</p>
+        <p>Interfaces developed under professional principles, guaranteeing perfect readability on any device.</p>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-title" style="text-align: center; padding-bottom: 0;">
-      <h2>Our <span>Structure</span></h2>
-      <p style="margin: 0 auto; max-width: 650px;">The ecosystem is supported by fundamental pillars designed to ensure an organized, coherent, and professional informative environment.</p>
+      <h2>Operational <span>Areas</span></h2>
+      <p style="margin: 0 auto; max-width: 650px;">Internal organization of the teams maintaining the project's content flow, technology, and strategic partnerships.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
@@ -764,42 +701,13 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
     <div class="cta-split-box">
       <div class="cta-half cta-personal">
         <h2>Personal <span>Contact</span></h2>
-        <p>User-oriented communication channel to resolve questions and receive ecosystem feedback.</p>
-        <a href="contacto-personal.html" class="btn-primary">Reader Support</a>
+        <p>User-oriented communication channel to answer questions and gather ecosystem feedback.</p>
+        <a href="contacto-personal" class="btn-primary">User Support</a>
       </div>
       <div class="cta-half cta-empresa">
         <h2>Business <span>Contact</span></h2>
-        <p>Area focused on partnership management, brand integration, and the acquisition of advertising spaces.</p>
-        <a href="contacto-empresarial.html" class="btn-primary">Corporate Area</a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<div id="view-contact" class="view-section">
-  <section>
-    <div class="section-title" style="text-align: center; padding-top: 120px;">
-      <h2>Institutional <span>Contact</span></h2>
-      <p style="margin: 0 auto; max-width: 600px;">Select the appropriate channel to direct your request to the corresponding area of the organization.</p>
-    </div>
-    <div class="cards" style="margin-top: 40px;">
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Users & Readers</h3>
-        <p>General support, suggestions, technical reporting, and feedback on the browsing experience.</p>
-        <a href="mailto:soporte@corgax.com" class="btn-primary" style="margin-top: auto;">Contact Support</a>
-      </div>
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
-        <h3>Brands & Partnerships</h3>
-        <p>Commercial proposals, service integration, and evaluation of strategic associations.</p>
-        <a href="mailto:comercial@corgax.com" class="btn-primary" style="margin-top: auto;">Corporate Area</a>
-      </div>
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <h3>Press & Media</h3>
-        <p>Exclusive contact for communication agencies and institutional permissions.</p>
-        <a href="mailto:prensa@corgax.com" class="btn-primary" style="margin-top: auto;">Press Room</a>
+        <p>Area focused on managing partnerships, brand integration, and acquiring advertising spaces.</p>
+        <a href="contacto-empresarial" class="btn-primary">Corporate Area</a>
       </div>
     </div>
   </section>
@@ -820,7 +728,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-brand">
-      <a href="index.html" class="logo" style="background:transparent; padding:0; height:auto; min-height:0; pointer-events: none;">
+      <a href="/" class="logo" style="background:transparent; padding:0; height:auto; min-height:0; pointer-events: none;">
         <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg" style="height: 1.6rem; display: block;">
           <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
@@ -834,7 +742,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
           </g>
         </svg>
       </a>
-      <p style="margin-top: 6px;">A content project that organizes informative and analytical spaces under a unified, neutral, and constantly evolving structure.</p>
+      <p style="margin-top: 6px;">Digital structure focused on organizing and distributing news, analysis, and technology through specialized platforms.</p>
     </div>
     <div class="footer-links">
       <div class="link-group">
@@ -844,16 +752,17 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
         <a href="corgax-space.html">Corgax Space</a>
       </div>
       <div class="link-group">
-        <h4>Corporate</h4>
-        <a href="contacto-personal.html">Personal Contact</a>
-        <a href="contacto-empresarial.html">Business Contact</a>
+        <h4>Organization</h4>
+        <a href="quienes-somos">About us</a>
+        <a href="contacto-personal">Personal Contact</a>
+        <a href="contacto-empresarial">Business Contact</a>
       </div>
       <div class="link-group">
         <h4>Policies</h4>
-        <a href="politica-privacidad.html">Privacy Policy</a>
-        <a href="terminos-uso.html">Terms of Use</a>
+        <a href="politica-privacidad">Privacy Policy</a>
+        <a href="terminos-uso">Terms of Use</a>
       </div>
-      <div class="link-group">
+      <div class="link-group signature-group">
         <span class="project-label">A project by</span>
         <a href="https://corgiva.com" target="_blank" rel="noopener noreferrer" class="corgiva-signature notranslate" translate="no">Corgiva <span>Group</span></a>
       </div>
@@ -880,28 +789,6 @@ document.addEventListener('click', (e) => {
     dropdown.classList.remove('open');
   }
 });
-
-function navigate(viewId) {
-  document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
-  
-  document.getElementById('view-' + viewId).classList.add('active');
-  
-  if(viewId === 'contact') {
-    document.getElementById('nav-contact').classList.add('active');
-  } else {
-    const activeLink = document.getElementById('nav-' + viewId);
-    if(activeLink) activeLink.classList.add('active');
-  }
-  
-  document.getElementById('navLinks').classList.remove('nav-active');
-  document.getElementById('menuBtn').classList.remove('nav-active');
-  header.classList.remove('menu-open');
-  dropdown.classList.remove('open');
-  
-  document.body.style.overflow = '';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
