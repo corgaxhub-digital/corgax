@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <meta name="google" content="notranslate">
 <title>CORGAX | Hub Central del Ecosistema</title>
-<meta name="description" content="Estructura que organiza contenido informativo, análisis y tecnología, adaptable a distintos formatos y plataformas. Hub central del ecosistema Corgax.">
+<meta name="description" content="Hub central y estructura que organiza contenido informativo, análisis y tecnología, adaptable a distintos formatos y plataformas.">
 <meta name="keywords" content="Corgax, ecosistema digital, noticias, análisis, tecnología, finanzas, Perú, global, Corgiva Group">
 <meta name="author" content="Corgiva Group">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://corgax.com/">
 <meta property="og:title" content="CORGAX | Hub Central del Ecosistema">
-<meta property="og:description" content="Estructura que organiza contenido informativo, análisis y tecnología, adaptable a distintos formatos y plataformas.">
+<meta property="og:description" content="Hub central y estructura que organiza contenido informativo, análisis y tecnología, adaptable a distintos formatos y plataformas.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -93,7 +93,6 @@ body.light .header { background: rgba(255, 255, 255, 0.85); }
   height: 100%;
   padding: 0 32px;
 }
-
 .header.scrolled {
   background: rgba(18, 20, 28, 0.98);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
@@ -103,7 +102,6 @@ body.light .header.scrolled {
   background: rgba(255, 255, 255, 0.98);
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
-
 .logo {
   text-decoration: none; color: var(--text-main);
   cursor: pointer;
@@ -232,22 +230,35 @@ body.light .bento-overlay { background: linear-gradient(to top, rgba(0,0,0,0.85)
 body.light .bento-solid:hover { border-color: var(--border-hover); }
 .bento-solid .bento-content { color: var(--text-main); }
 .bento-solid p { color: var(--text-secondary); font-weight: 500; }
+
 .social-grid { display: flex; gap: 12px; margin-top: auto; }
 .social-btn { 
-  width: 46px; 
   height: 46px; 
+  padding: 0 24px;
   border-radius: 12px; 
   border: 2px solid var(--brand-red); 
-  background: transparent;
-  color: var(--brand-red); 
+  background: var(--brand-red); 
+  color: #ffffff; 
   display: inline-flex; 
   align-items: center; 
   justify-content: center; 
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
   transition: all 0.3s ease; 
   text-decoration: none; 
+  box-shadow: 0 4px 15px rgba(225, 6, 44, 0.15);
 }
-.social-btn:hover { background: var(--brand-red); color: #fff; transform: translateY(-3px); }
-.social-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; transition: color 0.3s ease; }
+.social-btn:hover { 
+  background: var(--brand-red-hover); 
+  border-color: var(--brand-red-hover);
+  color: #fff; 
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(225, 6, 44, 0.35);
+}
+.social-btn svg { width: 22px; height: 22px; transition: color 0.3s ease; }
+
 .infra-section { padding-top: 60px; padding-bottom: 60px; }
 .infra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
 .infra-card { padding: 40px; border-radius: 20px; border: 1px solid var(--border-card); background: var(--bg-card); box-shadow: var(--shadow-subtle); transition: all 0.4s ease; }
@@ -273,7 +284,9 @@ body.light .team-avatar { background: var(--bg-icon-box); }
 .team-avatar svg { width: 30px; height: 30px; stroke: currentColor; stroke-width: 2; fill: none; transform: rotate(-45deg); transition: transform 0.5s ease; }
 .team-card:hover .team-avatar svg { transform: rotate(0deg); }
 .team-card h3 { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; color: var(--text-main); letter-spacing: -0.02em; }
-.team-card p { font-size: 0.85rem; color: var(--brand-red); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
+.team-card p { font-size: 0.85rem; color: #f45b73; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 800; margin: 0; }
+body.light .team-card p { color: var(--brand-red); }
+
 .cta-wrapper { padding-top: 60px; padding-bottom: 40px; }
 .cta-split-box { display: flex; border-radius: 32px; overflow: hidden; border: 1px solid var(--border-card); background: var(--bg-card); position: relative; z-index: 1; box-shadow: var(--shadow-subtle); }
 body.light .cta-split-box { border: 1px solid var(--border-light); background: #ffffff; }
@@ -310,12 +323,12 @@ body.light .logo-tech { filter: grayscale(100%) brightness(0) invert(0); opacity
   margin-top: 40px; 
   background: var(--bg-panel); 
   border-top: 1px solid var(--border-light);
-  box-shadow: 0 -10px 40px rgba(0,0,0,0.12); /* Sombra superior más suave (antes 0.25) */
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.12);
   position: relative;
   z-index: 10;
 }
 body.light .site-footer { 
-  box-shadow: 0 -10px 40px rgba(0,0,0,0.02); /* Sombra superior casi invisible en modo claro */
+  box-shadow: 0 -10px 40px rgba(0,0,0,0.02);
 }
 
 .footer-content { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 60px; justify-content: space-between; }
@@ -325,14 +338,18 @@ body.light .site-footer {
 .footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
 .link-group { display: flex; flex-direction: column; gap: 12px; }
 .link-group h4 { font-size: 0.95rem; color: var(--text-main); margin: 0; padding: 0; background: none; border: none; letter-spacing: 0.05em; display: block; width: auto;}
+
+/* Estilo unificado para los enlaces del footer */
 .link-group a { display: block; font-weight: 500; color: var(--text-secondary); text-decoration: none !important; font-size: 0.9rem; transition: color 0.3s ease; cursor: pointer; }
-.link-group a:hover { color: var(--brand-red) !important; }
+.link-group a:hover, .link-group a.active-link { color: var(--brand-red) !important; }
+
+.signature-group { gap: 2px !important; }
 
 a.corgiva-signature { 
   font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif !important; 
   font-weight: 800 !important; 
-  font-size: 1.15rem !important; 
-  letter-spacing: -0.02em !important; 
+  font-size: 1.5rem !important; 
+  letter-spacing: -0.03em !important; 
   text-decoration: none !important; 
   color: var(--text-main) !important; 
   transition: all 0.3s ease !important; 
@@ -347,15 +364,10 @@ a.corgiva-signature {
   -ms-user-select: none !important;
 }
 a.corgiva-signature span { font-weight: 400 !important; color: var(--text-secondary) !important; transition: color 0.3s ease !important; }
-.link-group a.corgiva-signature:hover { 
-  color: var(--text-main) !important; 
-  transform: translateY(-2px); 
-}
-.link-group a.corgiva-signature:hover span { 
-  color: var(--text-main) !important; 
-}
+.link-group a.corgiva-signature:hover { color: var(--text-main) !important; transform: translateY(-2px); }
+.link-group a.corgiva-signature:hover span { color: var(--text-main) !important; }
 
-.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 8px; }
+.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0; }
 .footer-bottom { 
   max-width: 1240px; 
   margin: 60px auto 0; 
@@ -485,7 +497,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 
 <div class="header" id="mainHeader">
   <div class="header-inner">
-    <a href="index.html" class="logo">
+    <a href="/" class="logo">
       <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg">
         <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
           <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
@@ -502,10 +514,10 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
     
     <div class="nav-box">
       <nav class="nav-links" id="navLinks">
-        <a href="index.html" id="nav-inicio" class="active">Inicio</a>
-        <a href="corgax24.html" id="nav-corgax24">Corgax24</a>
-        <a href="corgax-prime.html" id="nav-corgax-prime">Corgax Prime</a>
-        <a href="corgax-space.html" id="nav-corgax-space">Corgax Space</a>
+        <a href="/" id="nav-inicio" class="active">Inicio</a>
+        <a href="corgax24" id="nav-corgax24">Corgax24</a>
+        <a href="corgax-prime" id="nav-corgax-prime">Corgax Prime</a>
+        <a href="corgax-space" id="nav-corgax-space">Corgax Space</a>
         
         <div class="nav-dropdown" id="contactoDropdown">
           <a class="nav-dropdown-btn" id="nav-contacto">
@@ -513,8 +525,8 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
             <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
           </a>
           <div class="nav-dropdown-content">
-            <a href="contacto-personal.html">Contacto Personal</a>
-            <a href="contacto-empresarial.html">Contacto Empresarial</a>
+            <a href="contacto-personal">Contacto Personal</a>
+            <a href="contacto-empresarial">Contacto Empresarial</a>
           </div>
         </div>
       </nav>
@@ -554,12 +566,12 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
           </g>
         </svg>
       </h1>   
-      <p>Estructura que organiza contenido informativo, análisis y tecnología, adaptable a distintos formatos y plataformas.</p>
+      <p>Plataforma central que organiza información, análisis y tecnología en espacios independientes y adaptables.</p>
       <button onclick="document.getElementById('bento').scrollIntoView()" class="btn-primary">Explorar Ecosistema</button>
     </div>
 
     <div class="bento-grid" id="bento">
-      <div class="bento-card bento-corgax24" onclick="window.location.href='corgax24.html'">
+      <div class="bento-card bento-corgax24" onclick="window.location.href='corgax24'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1200')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
@@ -569,7 +581,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
         </div>
       </div>
       
-      <div class="bento-card bento-corgax-prime" onclick="window.location.href='corgax-prime.html'">
+      <div class="bento-card bento-corgax-prime" onclick="window.location.href='corgax-prime'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
@@ -579,7 +591,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
         </div>
       </div>
 
-      <div class="bento-card bento-corgax-space" onclick="window.location.href='corgax-space.html'">
+      <div class="bento-card bento-corgax-space" onclick="window.location.href='corgax-space'">
         <div class="bento-bg" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800')"></div>
         <div class="bento-overlay"></div>
         <div class="bento-content">
@@ -591,13 +603,14 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 
       <div class="bento-card bento-solid bento-info-1">
         <div class="bento-content">
-          <h3 style="font-size: 1.5rem;">Nuestras Redes</h3>
-          <p>Conecta con el ecosistema CORGAX en tiempo real y explora nuestra estructura en las plataformas digitales.</p>
+          <h3 style="font-size: 1.5rem;">Canales Digitales</h3>
+          <p>Sigue las actualizaciones y la distribución de nuestro contenido a través de redes sociales.</p>
           <div class="social-grid">
             <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook">
               <svg viewBox="0 0 24 24" style="fill: currentColor; stroke: none;">
                 <path d="M15.12 5.32H17V2.14A26.11 26.11 0 0 0 14.26 2c-2.72 0-4.58 1.66-4.58 4.7v2.62H6.61v3.56h3.07V22h3.68v-9.12h3.06l.46-3.56h-3.52V7.05c0-1.05.28-1.73 1.76-1.73z"/>
               </svg>
+              Facebook
             </a>
           </div>
         </div>
@@ -614,8 +627,8 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
       <div class="bento-card bento-solid bento-info-3">
         <div class="bento-content">
           <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
-          <h3 style="font-size: 1.5rem;">Infraestructura</h3>
-          <p>Diseño corporativo basado en la escalabilidad y la distribución ordenada de contenido.</p>
+          <h3 style="font-size: 1.5rem;">Diseño y Navegación</h3>
+          <p>Entorno web desarrollado para ofrecer una experiencia fluida, limpia y sin distracciones en todos nuestros servicios.</p>
         </div>
       </div>
     </div>
@@ -644,8 +657,8 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 
   <section>
     <div class="section-title" style="text-align: center; padding-bottom: 0;">
-      <h2>Nuestra <span>Estructura</span></h2>
-      <p style="margin: 0 auto; max-width: 650px;">El ecosistema se sostiene sobre pilares fundamentales diseñados para garantizar un entorno informativo ordenado, coherente y profesional.</p>
+      <h2>Áreas <span>Operativas</span></h2>
+      <p style="margin: 0 auto; max-width: 650px;">Organización interna de los equipos que mantienen el flujo de contenido, la tecnología y las alianzas del proyecto.</p>
     </div>
     <div class="team-grid">
       <div class="team-card">
@@ -684,41 +697,12 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
       <div class="cta-half cta-personal">
         <h2>Contacto <span>Personal</span></h2>
         <p>Canal de comunicación orientado al usuario para resolver dudas y recibir feedback del ecosistema.</p>
-        <a href="contacto-personal.html" class="btn-primary">Atención al Lector</a>
+        <a href="contacto-personal" class="btn-primary">Atención al Usuario</a>
       </div>
       <div class="cta-half cta-empresa">
         <h2>Contacto <span>Empresa</span></h2>
         <p>Área enfocada en la gestión de alianzas, integración de marcas y adquisición de espacios publicitarios.</p>
-        <a href="contacto-empresarial.html" class="btn-primary">Área Corporativa</a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<div id="view-contacto" class="view-section">
-  <section>
-    <div class="section-title" style="text-align: center; padding-top: 120px;">
-      <h2><span>Contacto</span> Institucional</h2>
-      <p style="margin: 0 auto; max-width: 600px;">Selecciona el canal adecuado para dirigir tu solicitud al área correspondiente de la organización.</p>
-    </div>
-    <div class="cards" style="margin-top: 40px;">
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-        <h3>Usuarios y Lector</h3>
-        <p>Atención general, sugerencias, reporte técnico y feedback sobre la experiencia de navegación.</p>
-        <a href="mailto:soporte@corgax.com" class="btn-primary" style="margin-top: auto;">Contactar Soporte</a>
-      </div>
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
-        <h3>Marca y Alianzas</h3>
-        <p>Propuestas comerciales, integración de servicios y evaluación de asociaciones estratégicas.</p>
-        <a href="mailto:comercial@corgax.com" class="btn-primary" style="margin-top: auto;">Área Corporativa</a>
-      </div>
-      <div class="clean-card">
-        <div class="icon-box"><svg class="cat-icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg></div>
-        <h3>Prensa y Medios</h3>
-        <p>Contacto exclusivo para agencias de comunicación y permisos institucionales.</p>
-        <a href="mailto:prensa@corgax.com" class="btn-primary" style="margin-top: auto;">Sala de Prensa</a>
+        <a href="contacto-empresarial" class="btn-primary">Área Corporativa</a>
       </div>
     </div>
   </section>
@@ -739,7 +723,7 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
 <footer class="site-footer">
   <div class="footer-content">
     <div class="footer-brand">
-      <a href="index.html" class="logo" style="background:transparent; padding:0; height:auto; min-height:0; pointer-events: none;">
+      <a href="/" class="logo" style="background:transparent; padding:0; height:auto; min-height:0; pointer-events: none;">
         <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg" style="height: 1.6rem; display: block;">
           <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
             <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
@@ -753,26 +737,27 @@ a.corgiva-signature span { font-weight: 400 !important; color: var(--text-second
           </g>
         </svg>
       </a>
-      <p style="margin-top: 6px;">Proyecto de contenido que organiza espacios informativos y de análisis bajo una estructura unificada, neutral y en constante evolución.</p>
+      <p style="margin-top: 6px;">Estructura digital orientada a la organización y distribución de actualidad, análisis y tecnología mediante plataformas especializadas.</p>
     </div>
     <div class="footer-links">
       <div class="link-group">
         <h4>Ecosistema</h4>
-        <a href="corgax24.html">Corgax24</a>
-        <a href="corgax-prime.html">Corgax Prime</a>
-        <a href="corgax-space.html">Corgax Space</a>
+        <a href="corgax24">Corgax24</a>
+        <a href="corgax-prime">Corgax Prime</a>
+        <a href="corgax-space">Corgax Space</a>
       </div>
       <div class="link-group">
-        <h4>Corporativo</h4>
-        <a href="contacto-personal.html">Contacto Personal</a>
-        <a href="contacto-empresarial.html">Contacto Empresarial</a>
+        <h4>Organización</h4>
+        <a href="quienes-somos">Quiénes somos</a>
+        <a href="contacto-personal">Contacto Personal</a>
+        <a href="contacto-empresarial">Contacto Empresarial</a>
       </div>
       <div class="link-group">
         <h4>Políticas</h4>
-        <a href="politica-privacidad.html">Privacidad</a>
-        <a href="terminos-uso.html">Términos de uso</a>
+        <a href="politica-privacidad">Privacidad</a>
+        <a href="terminos-uso">Términos de uso</a>
       </div>
-      <div class="link-group">
+      <div class="link-group signature-group">
         <span class="project-label">Un proyecto de</span>
         <a href="https://corgiva.com" target="_blank" rel="noopener noreferrer" class="corgiva-signature notranslate" translate="no">Corgiva <span>Group</span></a>
       </div>
@@ -799,28 +784,6 @@ document.addEventListener('click', (e) => {
     dropdown.classList.remove('open');
   }
 });
-
-function navigate(viewId) {
-  document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(el => el.classList.remove('active'));
-  
-  document.getElementById('view-' + viewId).classList.add('active');
-  
-  if(viewId === 'contacto') {
-    document.getElementById('nav-contacto').classList.add('active');
-  } else {
-    const activeLink = document.getElementById('nav-' + viewId);
-    if(activeLink) activeLink.classList.add('active');
-  }
-  
-  document.getElementById('navLinks').classList.remove('nav-active');
-  document.getElementById('menuBtn').classList.remove('nav-active');
-  header.classList.remove('menu-open');
-  dropdown.classList.remove('open');
-  
-  document.body.style.overflow = '';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
