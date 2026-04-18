@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="google" content="notranslate">
+<title>CORGAX | Personal Contact</title>
+<meta name="description" content="User-oriented communication channel for the Corgax ecosystem. Reader support and feedback.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#12141c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================= */
+/* BASE STYLES & VARIABLES       */
+/* ============================= */
+:root {
+  --bg-body: #12141c; --bg-section: transparent; --bg-card: #1a1d27; --bg-card-hover: #222634;
+  --bg-panel: #1a1d27; --bg-icon-box: rgba(225, 6, 44, 0.1);
+  --border-light: rgba(255, 255, 255, 0.08); --border-card: rgba(255, 255, 255, 0.04); --border-hover: rgba(225, 6, 44, 0.5);
+  --text-main: #ffffff; --text-secondary: #A1A1AA; --text-muted: #6b7280;
+  --brand-red: #E1062C; --brand-red-hover: #ff1a43;
+  --shadow-subtle: 0 10px 40px -10px rgba(0,0,0,0.5); --shadow-hover: 0 20px 40px -10px rgba(225, 6, 44, 0.15);
+}
+body.light {
+  --bg-body: #ffffff; --bg-card: #ffffff; --bg-card-hover: #f8fafc; --bg-panel: #ffffff; --bg-icon-box: #f1f5f9;
+  --border-light: #EAEAEA; --border-card: #EAEAEA; --border-hover: #cbd5e1;
+  --text-main: #000000; --text-secondary: #404040; --text-muted: #94a3b8;
+  --brand-red: #d90429; --brand-red-hover: #e60a33;
+  --shadow-subtle: 0 8px 30px rgba(15, 23, 42, 0.04); --shadow-hover: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+* { -webkit-tap-highlight-color: transparent !important; }
+*:focus { outline: none !important; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-body); color: var(--text-main); line-height: 1.6; transition: background 0.5s ease, color 0.5s ease; overflow-x: hidden; }
+
+/* ============================= */
+/* HEADER & NAVIGATION           */
+/* ============================= */
+.header { position: fixed; top: 0; left: 0; right: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; height: 76px; background: rgba(18, 20, 28, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-light); transition: all 0.4s ease; }
+body.light .header { background: rgba(255, 255, 255, 0.85); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; height: 100%; padding: 0 32px; }
+.header.scrolled { background: rgba(18, 20, 28, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.12); height: 68px; }
+body.light .header.scrolled { background: rgba(255, 255, 255, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.logo { text-decoration: none; color: var(--text-main); display: inline-flex; align-items: center; height: 100%; transition: opacity 0.3s ease; }
+.logo:hover { opacity: 0.8; }
+.logo-svg-full { height: 1.3rem; width: auto; display: block; }
+.nav-box { display: flex; align-items: center; height: 100%; }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links > a { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease; }
+.nav-links > a:hover, .nav-links > a.active { color: var(--text-main); background: rgba(255,255,255,0.05); }
+body.light .nav-links > a:hover, body.light .nav-links > a.active { background: rgba(0,0,0,0.04); }
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-btn { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; color: var(--brand-red) !important; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.3s ease;}
+.nav-dropdown-btn:hover, .nav-dropdown-btn.active { background: rgba(225, 6, 44, 0.1); }
+.nav-dropdown-btn svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 3; fill: none; transition: transform 0.3s ease;}
+.nav-dropdown.open .nav-dropdown-btn svg { transform: rotate(180deg); }
+.nav-dropdown-content { position: absolute; top: calc(100% + 15px); right: 0; background: var(--bg-panel); border: 1px solid var(--border-light); border-radius: 16px; padding: 8px; min-width: 200px; box-shadow: var(--shadow-hover); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 100; display: flex; flex-direction: column; }
+body.light .nav-dropdown-content { background: #ffffff; }
+.nav-dropdown.open .nav-dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+/* CENTERED DROPDOWN LINKS */
+.nav-links .nav-dropdown-content a { padding: 12px 16px; margin: 2px 0; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-transform: none; color: var(--text-main); text-decoration: none; transition: all 0.2s ease; display: flex; justify-content: center; text-align: center; }
+.nav-links .nav-dropdown-content a:hover { background: transparent; color: var(--brand-red); transform: translateY(-2px); }
+.nav-divider { width: 1px; height: 16px; background: var(--border-light); margin: 0 12px; }
+.nav-tools { display: flex; gap: 4px; }
+.nav-btn { width: 36px; height: 36px; border-radius: 8px; border: none; background: transparent; color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; text-decoration: none !important; font-size: 0.85rem; font-weight: 800;}
+.nav-btn:hover { background: rgba(255,255,255,0.05); }
+body.light .nav-btn:hover { background: rgba(0,0,0,0.04); }
+#theme:hover { color: var(--brand-red); }
+.menu-btn { display: none; padding: 0; border: none; color: var(--text-main); }
+.menu-icon { width: 24px; height: 20px; position: relative; }
+.menu-icon .line { position: absolute; height: 2px; background: currentColor; border-radius: 2px; transition: all 0.3s ease; left: 0; }
+.line-1 { top: 0; width: 100%; } .line-2 { top: 9px; width: 70%; right: 0; left: auto; } .line-3 { top: 18px; width: 100%; }
+.menu-btn.nav-active .line-1 { top: 9px; transform: rotate(45deg); width: 100%; }
+.menu-btn.nav-active .line-2 { opacity: 0; transform: translateX(10px); }
+.menu-btn.nav-active .line-3 { top: 9px; transform: rotate(-45deg); width: 100%; }
+.icon-svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.icon-moon { display: none; } body.light .icon-sun { display: none; } body.light .icon-moon { display: block; }
+
+/* ============================= */
+/* PERSONAL CONTACT CONTENT      */
+/* ============================= */
+.main-wrapper { padding-top: 100px; min-height: 80vh; }
+section { max-width: 1240px; margin: 0 auto; padding: 40px 24px 60px; }
+.contact-header { text-align: center; margin-bottom: 60px; }
+.contact-header h2 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 16px; }
+.contact-header h2 span { color: var(--brand-red); }
+.contact-header p { font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+.contact-layout { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media(min-width: 992px) { .contact-layout { grid-template-columns: 1fr 1.5fr; align-items: start; } }
+
+.contact-info-cards { display: flex; flex-direction: column; gap: 20px; }
+.info-card { background: var(--bg-card); padding: 32px; border-radius: 20px; border: 1px solid var(--border-card); box-shadow: var(--shadow-subtle); display: flex; gap: 20px; transition: all 0.3s ease; }
+body.light .info-card { border-color: var(--border-light); }
+.info-card:hover { border-color: var(--border-hover); transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.info-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--bg-icon-box); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--brand-red); }
+.info-icon svg { width: 24px; height: 24px; stroke: currentColor; stroke-width: 2; fill: none; }
+.info-text h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+.info-text p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5; }
+
+/* Contact Form */
+.form-box { background: var(--bg-card); padding: 40px; border-radius: 24px; border: 1px solid var(--border-card); box-shadow: var(--shadow-subtle); }
+body.light .form-box { border-color: var(--border-light); }
+.form-row { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 24px; }
+@media(min-width: 768px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;}
+.form-group label { font-size: 0.85rem; font-weight: 700; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.05em; }
+.form-control { width: 100%; background: var(--bg-body); border: 1px solid var(--border-light); color: var(--text-main); padding: 16px; border-radius: 12px; font-family: inherit; font-size: 1rem; transition: all 0.3s ease; }
+.form-control:focus { border-color: var(--brand-red); outline: none; box-shadow: 0 0 0 3px rgba(225,6,44,0.1); }
+textarea.form-control { min-height: 150px; resize: vertical; }
+
+.btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 18px 32px; background: var(--text-main); color: var(--bg-body); font-weight: 800; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 14px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: var(--shadow-subtle); }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+body.light .btn-primary { background: #000; color: #fff; }
+
+/* Simulated Loading Animation */
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
+.site-footer { padding: 60px 24px 0px; margin-top: 40px; background: var(--bg-panel); border-top: 1px solid var(--border-light); box-shadow: 0 -10px 40px rgba(0,0,0,0.12); position: relative; z-index: 10; }
+body.light .site-footer { box-shadow: 0 -10px 40px rgba(0,0,0,0.02); }
+.footer-content { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 60px; justify-content: space-between; }
+.footer-brand { max-width: 320px; }
+.footer-brand p { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); line-height: 1.6; margin-top: 6px; }
+.footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
+.link-group { display: flex; flex-direction: column; gap: 12px; }
+.link-group h4 { font-size: 0.95rem; color: var(--text-main); margin: 0; font-weight: 800; letter-spacing: 0.05em; }
+
+/* Footer Links */
+.link-group a { display: block; font-weight: 500; color: var(--text-secondary); text-decoration: none !important; font-size: 0.9rem; transition: color 0.3s ease; cursor: pointer; }
+.link-group a:hover, .link-group a.active-link { color: var(--brand-red) !important; }
+
+.signature-group { gap: 2px !important; }
+
+a.corgiva-signature { 
+  font-family: 'Archivo', sans-serif !important; 
+  font-weight: 800 !important; 
+  font-size: 1.5rem !important; 
+  letter-spacing: -0.03em !important; 
+  text-decoration: none !important; 
+  color: var(--text-main) !important; 
+  transition: all 0.3s ease !important; 
+  display: inline-block;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+a.corgiva-signature span { font-weight: 400 !important; color: var(--text-secondary) !important; transition: color 0.3s ease !important; }
+.link-group a.corgiva-signature:hover { color: var(--text-main) !important; transform: translateY(-2px); }
+.link-group a.corgiva-signature:hover span { color: var(--text-main) !important; }
+
+.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0; }
+.footer-bottom { max-width: 1240px; margin: 60px auto 0; padding: 30px 0; border-top: 1px solid var(--border-light); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================= */
+/* RESPONSIVE MOBILE             */
+/* ============================= */
+@media(min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: center; } }
+@media(max-width: 992px) { .header { height: 64px; } .header.scrolled { height: 60px; } .header-inner { padding: 0 24px; } .logo-svg-full { height: 1.2rem; } }
+@media(max-width: 768px) {
+  .header { height: 56px; } .header.scrolled { height: 56px; } .header-inner { padding: 0 16px; } .logo-svg-full { height: 1.15rem; }
+  .header.menu-open { background: var(--bg-body) !important; border-bottom: 1px solid var(--border-light) !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  body.light .header.menu-open { background: #ffffff !important; }
+  .nav-box { position: static; } .header .logo, .header .nav-tools { position: relative; z-index: 1001; }
+  .nav-links { display: none; position: fixed; top: 56px; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: calc(100vh - 56px) !important; background: var(--bg-body); padding: 40px 24px 80px; flex-direction: column; z-index: 999; overflow-y: auto; border: none !important; border-radius: 0 !important; box-shadow: none !important; justify-content: flex-start; align-items: center; gap: 4px; }
+  body.light .nav-links { background: #ffffff; }
+  .nav-links.nav-active { display: flex; animation: fadeInApp 0.3s forwards; }
+  .nav-links > a { background: transparent !important; border: none !important; box-shadow: none !important; padding: 16px 20px; font-size: 1.5rem; border-radius: 16px; display: flex; justify-content: center; width: 100%; text-align: center; color: var(--text-main); }
+  .nav-links > a:hover, .nav-links > a.active { color: var(--brand-red); }
+  .nav-dropdown { width: 100%; display: block; } 
+  .nav-dropdown-btn { background: transparent !important; border: none !important; box-shadow: none !important; color: var(--brand-red) !important; justify-content: center; width: 100%; padding: 16px 20px; font-size: 1.5rem; border-radius: 16px; }
+  .nav-dropdown-btn span { border-bottom: none; padding-bottom: 0; }
+  .nav-dropdown-content { position: static; display: none; padding: 0; min-width: 100%; border: none; background: transparent; box-shadow: none; margin-top: 0; }
+  .nav-dropdown.open .nav-dropdown-content { display: flex; flex-direction: column; animation: fadeInApp 0.3s ease; }
+  .nav-dropdown-content::before { display: none; } 
+  .nav-links .nav-dropdown-content a { justify-content: center; font-size: 1.15rem; padding: 12px 10px; text-transform: uppercase; background: transparent; border: none; box-shadow: none; color: var(--text-secondary); }
+  .nav-links .nav-dropdown-content a:hover { color: var(--text-main); transform: translateY(0); }
+  .menu-btn { display: flex; align-items: center; justify-content: center; } .nav-divider { display: none; }
+  .form-box { padding: 24px; }
+  .footer-content { flex-direction: column; gap: 40px; }
+  .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 16px; width: 100%; align-items: start; }
+  .footer-brand { max-width: 100%; }
+  .footer-bottom { justify-content: center; text-align: center; padding: 30px 16px; }
+}
+@keyframes fadeInApp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="light">
+
+<!-- Instant theme synchronization -->
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('corgax_theme');
+      if (theme === 'dark') { document.body.classList.remove('light'); }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="header" id="mainHeader">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
+          <path d="M 24,7 A 5,5 0 0,1 29,2 L 32,2 A 5,5 0 0,1 37,7 L 37,19 A 5,5 0 0,1 32,24 L 29,24 A 5,5 0 0,1 24,19 Z" />
+          <path d="M 46,24 L 46,2 L 53,2 A 5.5,5.5 0 0,1 58.5,7.5 A 5.5,5.5 0 0,1 53,13 L 46,13 M 51,13 L 58,24" />
+          <path d="M 79,7 A 5,5 0 0,0 74,2 L 71,2 A 5,5 0 0,0 66,7 L 66,19 A 5,5 0 0,0 71,24 L 74,24 A 5,5 0 0,0 79,19 L 79,13 L 73,13" />
+        </g>
+        <g stroke="var(--brand-red)" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 88,24 L 95.5,2 L 103,24" />
+          <path d="M 111,2 L 126,24 M 126,2 L 111,24" />
+        </g>
+      </svg>
+    </a>
+    
+    <div class="nav-box">
+      <nav class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="corgax24">Corgax24</a>
+        <a href="corgax-prime">Corgax Prime</a>
+        <a href="corgax-space">Corgax Space</a>
+        
+        <div class="nav-dropdown" id="contactoDropdown">
+          <a class="nav-dropdown-btn active" id="nav-contacto">
+            <span>Contact</span>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-content">
+            <!-- Active link in dropdown -->
+            <a href="contacto-personal" style="color:var(--brand-red);">Personal Contact</a>
+            <a href="contacto-empresarial">Business Contact</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-divider"></div>
+      <div class="nav-tools">
+        <a href="/" class="nav-btn">ES</a>
+        <button class="nav-btn" id="theme" title="Light / Dark Mode">      
+          <svg class="icon-svg icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>      
+          <svg class="icon-svg icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>   
+        </button>
+        <button class="nav-btn menu-btn" id="menuBtn">
+          <div class="menu-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="main-wrapper">
+  <section>
+    <div class="contact-header">
+      <h2>Personal <span>Contact</span></h2>
+      <p>We are here to listen. Use this channel to resolve doubts, report technical issues, or send us your feedback about our content.</p>
+    </div>
+
+    <div class="contact-layout">
+      <!-- Information Cards -->
+      <div class="contact-info-cards">
+        <div class="info-card">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div class="info-text">
+            <h3>User Support</h3>
+            <p>General support regarding navigation, accounts, and ecosystem accessibility.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg></div>
+          <div class="info-text">
+            <h3>Suggestions</h3>
+            <p>Your comments help us improve. Tell us what content or service you would like to see.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+          <div class="info-text">
+            <h3>Technical Report</h3>
+            <p>Found a bug on the website? Send us the details so we can fix it immediately.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Form -->
+      <div class="form-box">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" class="form-control" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" class="form-control" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="soporte">User Support</option>
+              <option value="sugerencia">Content Suggestion</option>
+              <option value="error">Report a Bug</option>
+              <option value="otro">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea class="form-control" placeholder="How can we help you today?" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="/" class="logo" style="background:transparent; padding:0; height:auto; pointer-events: none;">
+        <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg" style="height: 1.6rem; display: block;">
+          <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
+            <path d="M 24,7 A 5,5 0 0,1 29,2 L 32,2 A 5,5 0 0,1 37,7 L 37,19 A 5,5 0 0,1 32,24 L 29,24 A 5,5 0 0,1 24,19 Z" />
+            <path d="M 46,24 L 46,2 L 53,2 A 5.5,5.5 0 0,1 58.5,7.5 A 5.5,5.5 0 0,1 53,13 L 46,13 M 51,13 L 58,24" />
+            <path d="M 79,7 A 5,5 0 0,0 74,2 L 71,2 A 5,5 0 0,0 66,7 L 66,19 A 5,5 0 0,0 71,24 L 74,24 A 5,5 0 0,0 79,19 L 79,13 L 73,13" />
+          </g>
+          <g stroke="var(--brand-red)" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 88,24 L 95.5,2 L 103,24" />
+            <path d="M 111,2 L 126,24 M 126,2 L 111,24" />
+          </g>
+        </svg>
+      </a>
+      <p>Digital structure focused on organizing and distributing news, analysis, and technology through specialized platforms.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <h4>Ecosystem</h4>
+        <a href="corgax24">Corgax24</a>
+        <a href="corgax-prime">Corgax Prime</a>
+        <a href="corgax-space">Corgax Space</a>
+      </div>
+      <div class="link-group">
+        <h4>Organization</h4>
+        <a href="quienes-somos">About us</a>
+        <a href="contacto-personal" class="active-link" style="color: var(--brand-red) !important;">Personal Contact</a>
+        <a href="contacto-empresarial">Business Contact</a>
+      </div>
+      <div class="link-group">
+        <h4>Policies</h4>
+        <a href="politica-privacidad">Privacy Policy</a>
+        <a href="terminos-uso">Terms of Use</a>
+      </div>
+      <div class="link-group signature-group">
+        <span class="project-label">A project by</span>
+        <a href="https://corgiva.com" target="_blank" rel="noopener noreferrer" class="corgiva-signature notranslate" translate="no">Corgiva <span>Group</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> CORGAX — All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('mainHeader');
+const dropdown = document.getElementById('contactoDropdown');
+const dropdownBtn = document.getElementById('nav-contacto');
+
+dropdownBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('open'); });
+document.addEventListener('click', (e) => { if (dropdown && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const themeBtn = document.getElementById("theme");
+themeBtn.onclick = () => {
+  document.body.classList.toggle("light");
+  try { localStorage.setItem("corgax_theme", document.body.classList.contains("light") ? "light" : "dark"); } catch (e) {}
+};
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("nav-active");
+  menuBtn.classList.toggle("nav-active");
+  header.classList.toggle("menu-open");
+  document.body.style.overflow = navLinks.classList.contains("nav-active") ? "hidden" : "";
+});
+
+// SIMULATED FORM SUBMISSION EFFECT
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevents page reload
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    
+    // Loading State
+    btn.innerHTML = '<svg style="width:20px;height:20px;animation:spin 1s linear infinite;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-opacity="0.3"></circle><path fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg> Sending...';
+    btn.disabled = true;
+    btn.style.opacity = '0.8';
+
+    // Timer (1.5 seconds)
+    setTimeout(() => {
+      btn.innerHTML = '✓ Message Sent!';
+      btn.style.backgroundColor = '#10B981'; // Green
+      btn.style.color = '#ffffff';
+      btn.style.opacity = '1';
+      this.reset();
+
+      // Reset button after 3 seconds
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        btn.style.backgroundColor = '';
+        btn.style.color = '';
+      }, 3000);
+    }, 1500);
+  });
+}
+</script>
+</body>
+</html>
