@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="google" content="notranslate">
+<title>CORGAX | Terms of Use</title>
+<meta name="description" content="Terms, conditions of use, and service agreements for the Corgax digital ecosystem.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#12141c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================= */
+/* BASE STYLES & VARIABLES       */
+/* ============================= */
+:root {
+  --bg-body: #12141c; --bg-section: transparent; --bg-card: #1a1d27; --bg-card-hover: #222634;
+  --bg-panel: #1a1d27; --bg-icon-box: rgba(225, 6, 44, 0.1);
+  --border-light: rgba(255, 255, 255, 0.08); --border-card: rgba(255, 255, 255, 0.04); --border-hover: rgba(225, 6, 44, 0.5);
+  --text-main: #ffffff; --text-secondary: #A1A1AA; --text-muted: #6b7280;
+  --brand-red: #E1062C; --brand-red-hover: #ff1a43;
+  --shadow-subtle: 0 10px 40px -10px rgba(0,0,0,0.5); --shadow-hover: 0 20px 40px -10px rgba(225, 6, 44, 0.15);
+}
+body.light {
+  --bg-body: #ffffff; --bg-card: #ffffff; --bg-card-hover: #f8fafc; --bg-panel: #ffffff; --bg-icon-box: #f1f5f9;
+  --border-light: #EAEAEA; --border-card: #EAEAEA; --border-hover: #cbd5e1;
+  --text-main: #000000; --text-secondary: #404040; --text-muted: #94a3b8;
+  --brand-red: #d90429; --brand-red-hover: #e60a33;
+  --shadow-subtle: 0 8px 30px rgba(15, 23, 42, 0.04); --shadow-hover: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+* { -webkit-tap-highlight-color: transparent !important; }
+*:focus { outline: none !important; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg-body); color: var(--text-main); line-height: 1.6; transition: background 0.5s ease, color 0.5s ease; overflow-x: hidden; }
+
+/* ============================= */
+/* HEADER & NAVIGATION           */
+/* ============================= */
+.header { position: fixed; top: 0; left: 0; right: 0; width: 100%; display: flex; justify-content: center; z-index: 1000; height: 76px; background: rgba(18, 20, 28, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-light); transition: all 0.4s ease; }
+body.light .header { background: rgba(255, 255, 255, 0.85); }
+.header-inner { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1240px; height: 100%; padding: 0 32px; }
+.header.scrolled { background: rgba(18, 20, 28, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.12); height: 68px; }
+body.light .header.scrolled { background: rgba(255, 255, 255, 0.98); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.logo { text-decoration: none; color: var(--text-main); display: inline-flex; align-items: center; height: 100%; transition: opacity 0.3s ease; }
+.logo:hover { opacity: 0.8; }
+.logo-svg-full { height: 1.3rem; width: auto; display: block; }
+.nav-box { display: flex; align-items: center; height: 100%; }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links > a { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; color: var(--text-secondary); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.3s ease; }
+.nav-links > a:hover, .nav-links > a.active { color: var(--text-main); background: rgba(255,255,255,0.05); }
+body.light .nav-links > a:hover, body.light .nav-links > a.active { background: rgba(0,0,0,0.04); }
+.nav-dropdown { position: relative; display: inline-block; }
+.nav-dropdown-btn { padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; color: var(--brand-red) !important; text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: all 0.3s ease;}
+.nav-dropdown-btn:hover, .nav-dropdown-btn.active { background: rgba(225, 6, 44, 0.1); }
+.nav-dropdown-btn svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 3; fill: none; transition: transform 0.3s ease;}
+.nav-dropdown.open .nav-dropdown-btn svg { transform: rotate(180deg); }
+.nav-dropdown-content { position: absolute; top: calc(100% + 15px); right: 0; background: var(--bg-panel); border: 1px solid var(--border-light); border-radius: 16px; padding: 8px; min-width: 200px; box-shadow: var(--shadow-hover); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 100; display: flex; flex-direction: column; }
+body.light .nav-dropdown-content { background: #ffffff; }
+.nav-dropdown.open .nav-dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-links .nav-dropdown-content a { padding: 12px 16px; margin: 2px 0; border-radius: 8px; font-size: 0.85rem; font-weight: 700; text-transform: none; color: var(--text-main); text-decoration: none; transition: all 0.2s ease; display: flex; justify-content: center; text-align: center; }
+.nav-links .nav-dropdown-content a:hover { background: transparent; color: var(--brand-red); transform: translateY(-2px); }
+.nav-divider { width: 1px; height: 16px; background: var(--border-light); margin: 0 12px; }
+.nav-tools { display: flex; gap: 4px; }
+.nav-btn { width: 36px; height: 36px; border-radius: 8px; border: none; background: transparent; color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; text-decoration: none !important; font-size: 0.85rem; font-weight: 800;}
+.nav-btn:hover { background: rgba(255,255,255,0.05); }
+body.light .nav-btn:hover { background: rgba(0,0,0,0.04); }
+#theme:hover { color: var(--brand-red); }
+.menu-btn { display: none; padding: 0; border: none; color: var(--text-main); }
+.menu-icon { width: 24px; height: 20px; position: relative; }
+.menu-icon .line { position: absolute; height: 2px; background: currentColor; border-radius: 2px; transition: all 0.3s ease; left: 0; }
+.line-1 { top: 0; width: 100%; } .line-2 { top: 9px; width: 70%; right: 0; left: auto; } .line-3 { top: 18px; width: 100%; }
+.menu-btn.nav-active .line-1 { top: 9px; transform: rotate(45deg); width: 100%; }
+.menu-btn.nav-active .line-2 { opacity: 0; transform: translateX(10px); }
+.menu-btn.nav-active .line-3 { top: 9px; transform: rotate(-45deg); width: 100%; }
+.icon-svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.icon-moon { display: none; } body.light .icon-sun { display: none; } body.light .icon-moon { display: block; }
+
+/* ============================= */
+/* LEGAL CONTENT (CARDS)         */
+/* ============================= */
+.legal-wrapper { padding-top: 120px; padding-bottom: 80px; min-height: 80vh; }
+.legal-container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+.legal-header { text-align: center; margin-bottom: 50px; }
+.legal-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; letter-spacing: -0.04em; margin-bottom: 12px; line-height: 1.1; }
+.legal-header h1 span { color: var(--brand-red); }
+.legal-date { display: inline-block; padding: 8px 16px; background: var(--bg-icon-box); color: var(--brand-red); border-radius: 8px; font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 16px; }
+
+/* Content Cards */
+.legal-card { background: var(--bg-card); border: 1px solid var(--border-card); border-radius: 24px; padding: 40px; margin-bottom: 40px; box-shadow: var(--shadow-subtle); transition: border-color 0.3s ease; }
+body.light .legal-card { border-color: var(--border-light); }
+.legal-card:hover { border-color: var(--border-hover); }
+
+.card-title { display: flex; align-items: center; gap: 12px; font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--border-card); letter-spacing: -0.02em;}
+body.light .card-title { border-color: var(--border-light); }
+.card-icon { width: 32px; height: 32px; color: var(--brand-red); }
+
+.legal-text h3 { font-size: 1.15rem; font-weight: 800; margin: 32px 0 12px; color: var(--text-main); }
+.legal-text h3:first-of-type { margin-top: 0; }
+.legal-text p, .legal-text ul { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; font-weight: 400; }
+.legal-text ul { padding-left: 24px; }
+.legal-text li { margin-bottom: 8px; }
+.legal-text strong { color: var(--text-main); font-weight: 700; }
+.legal-text a { color: var(--brand-red); text-decoration: none; font-weight: 600; }
+.legal-text a:hover { text-decoration: underline; }
+
+/* ============================= */
+/* FOOTER                        */
+/* ============================= */
+.site-footer { padding: 60px 24px 0px; margin-top: 40px; background: var(--bg-panel); border-top: 1px solid var(--border-light); box-shadow: 0 -10px 40px rgba(0,0,0,0.12); position: relative; z-index: 10; }
+body.light .site-footer { box-shadow: 0 -10px 40px rgba(0,0,0,0.02); }
+.footer-content { max-width: 1240px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 60px; justify-content: space-between; }
+.footer-brand { max-width: 320px; }
+.footer-brand p { font-size: 0.95rem; font-weight: 500; color: var(--text-secondary); line-height: 1.6; margin-top: 6px; }
+.footer-links { display: flex; gap: 60px; flex-wrap: wrap; }
+.link-group { display: flex; flex-direction: column; gap: 12px; }
+.link-group h4 { font-size: 0.95rem; color: var(--text-main); margin: 0; font-weight: 800; letter-spacing: 0.05em; }
+.link-group a { display: block; font-weight: 500; color: var(--text-secondary); text-decoration: none !important; font-size: 0.9rem; transition: color 0.3s ease; cursor: pointer; }
+.link-group a:hover, .link-group a.active-link { color: var(--brand-red) !important; }
+.signature-group { gap: 2px !important; }
+a.corgiva-signature { font-family: 'Archivo', sans-serif !important; font-weight: 800 !important; font-size: 1.5rem !important; letter-spacing: -0.03em !important; text-decoration: none !important; color: var(--text-main) !important; transition: all 0.3s ease !important; display: inline-block; background: transparent !important; border: none !important; box-shadow: none !important; padding: 0 !important; }
+a.corgiva-signature span { font-weight: 400 !important; color: var(--text-secondary) !important; transition: color 0.3s ease !important; }
+.link-group a.corgiva-signature:hover { color: var(--text-main) !important; transform: translateY(-2px); }
+.link-group a.corgiva-signature:hover span { color: var(--text-main) !important; }
+.project-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; display: block; margin-bottom: 0; }
+.footer-bottom { max-width: 1240px; margin: 60px auto 0; padding: 30px 0; border-top: 1px solid var(--border-light); text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+/* ============================= */
+/* RESPONSIVE MOBILE             */
+/* ============================= */
+@media(min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: center; } }
+@media(max-width: 992px) { .header { height: 64px; } .header.scrolled { height: 60px; } .header-inner { padding: 0 24px; } .logo-svg-full { height: 1.2rem; } }
+@media(max-width: 768px) {
+  .header { height: 56px; } .header.scrolled { height: 56px; } .header-inner { padding: 0 16px; } .logo-svg-full { height: 1.15rem; }
+  .legal-wrapper { padding-top: 100px; }
+  .legal-card { padding: 30px 20px; }
+  .header.menu-open { background: var(--bg-body) !important; border-bottom: 1px solid var(--border-light) !important; box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  body.light .header.menu-open { background: #ffffff !important; }
+  .nav-box { position: static; } .header .logo, .header .nav-tools { position: relative; z-index: 1001; }
+  .nav-links { display: none; position: fixed; top: 56px; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: calc(100vh - 56px) !important; background: var(--bg-body); padding: 40px 24px 80px; flex-direction: column; z-index: 999; overflow-y: auto; border: none !important; border-radius: 0 !important; box-shadow: none !important; justify-content: flex-start; align-items: center; gap: 4px; }
+  body.light .nav-links { background: #ffffff; }
+  .nav-links.nav-active { display: flex; animation: fadeInApp 0.3s forwards; }
+  .nav-links > a { background: transparent !important; border: none !important; box-shadow: none !important; padding: 16px 20px; font-size: 1.5rem; border-radius: 16px; display: flex; justify-content: center; width: 100%; text-align: center; color: var(--text-main); }
+  .nav-links > a:hover, .nav-links > a.active { color: var(--brand-red); }
+  .nav-dropdown { width: 100%; display: block; } 
+  .nav-dropdown-btn { background: transparent !important; border: none !important; box-shadow: none !important; color: var(--brand-red) !important; justify-content: center; width: 100%; padding: 16px 20px; font-size: 1.5rem; border-radius: 16px; }
+  .nav-dropdown-btn span { border-bottom: none; padding-bottom: 0; }
+  .nav-dropdown-content { position: static; display: none; padding: 0; min-width: 100%; border: none; background: transparent; box-shadow: none; margin-top: 0; }
+  .nav-dropdown.open .nav-dropdown-content { display: flex; flex-direction: column; animation: fadeInApp 0.3s ease; }
+  .nav-dropdown-content::before { display: none; } 
+  .nav-links .nav-dropdown-content a { justify-content: center; font-size: 1.15rem; padding: 12px 10px; text-transform: uppercase; background: transparent; border: none; box-shadow: none; color: var(--text-secondary); }
+  .nav-links .nav-dropdown-content a:hover { color: var(--text-main); transform: translateY(0); }
+  .menu-btn { display: flex; align-items: center; justify-content: center; } .nav-divider { display: none; }
+  .footer-content { flex-direction: column; gap: 40px; }
+  .footer-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 16px; width: 100%; align-items: start; }
+  .footer-brand { max-width: 100%; }
+  .footer-bottom { justify-content: center; text-align: center; padding: 30px 16px; }
+}
+@keyframes fadeInApp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+</head>
+<body class="light">
+
+<script>
+  (function() {
+    try {
+      var theme = localStorage.getItem('corgax_theme');
+      if (theme === 'dark') { document.body.classList.remove('light'); }
+    } catch (e) {}
+  })();
+</script>
+
+<div class="header" id="mainHeader">
+  <div class="header-inner">
+    <a href="/en" class="logo">
+      <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
+          <path d="M 24,7 A 5,5 0 0,1 29,2 L 32,2 A 5,5 0 0,1 37,7 L 37,19 A 5,5 0 0,1 32,24 L 29,24 A 5,5 0 0,1 24,19 Z" />
+          <path d="M 46,24 L 46,2 L 53,2 A 5.5,5.5 0 0,1 58.5,7.5 A 5.5,5.5 0 0,1 53,13 L 46,13 M 51,13 L 58,24" />
+          <path d="M 79,7 A 5,5 0 0,0 74,2 L 71,2 A 5,5 0 0,0 66,7 L 66,19 A 5,5 0 0,0 71,24 L 74,24 A 5,5 0 0,0 79,19 L 79,13 L 73,13" />
+        </g>
+        <g stroke="var(--brand-red)" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 88,24 L 95.5,2 L 103,24" />
+          <path d="M 111,2 L 126,24 M 126,2 L 111,24" />
+        </g>
+      </svg>
+    </a>
+    
+    <div class="nav-box">
+      <nav class="nav-links" id="navLinks">
+        <a href="/en">Home</a>
+        <a href="corgax24">Corgax24</a>
+        <a href="corgax-prime">Corgax Prime</a>
+        <a href="corgax-space">Corgax Space</a>
+        
+        <div class="nav-dropdown" id="contactoDropdown">
+          <a class="nav-dropdown-btn" id="nav-contacto">
+            <span>Contact</span>
+            <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="nav-dropdown-content">
+            <a href="contacto-personal">Personal Contact</a>
+            <a href="contacto-empresarial">Business Contact</a>
+          </div>
+        </div>
+      </nav>
+      <div class="nav-divider"></div>
+      <div class="nav-tools">
+        <!-- Direct connection to Spanish Version -->
+        <a href="terminos-uso" class="nav-btn">ES</a>
+        <button class="nav-btn" id="theme" title="Light / Dark Mode">      
+          <svg class="icon-svg icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>      
+          <svg class="icon-svg icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>   
+        </button>
+        <button class="nav-btn menu-btn" id="menuBtn">
+          <div class="menu-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main class="legal-wrapper">
+  <div class="legal-container">
+    <div class="legal-header">
+      <h1>Terms of <span>Use</span></h1>
+      <p>Regulations, agreements, and rules of use for navigating and interacting with our ecosystem.</p>
+      <div class="legal-date">Last updated: April 18, 2026</div>
+    </div>
+
+    <!-- CARD 1: USERS -->
+    <div class="legal-card">
+      <div class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+        Terms of Use – Users
+      </div>
+      <div class="legal-text">
+        <h3>1. IDENTIFICATION</h3>
+        <p>This document regulates the access and use of the <strong>CORGAX</strong> website, as well as all its associated platforms, including but not limited to: CORGAX24, CORGAX Prime, CORGAX Tech, and CORGAX Space (hereinafter, "the Platform").</p>
+        <p>CORGAX acts as a digital hub that groups informative, technological, editorial, and commercial content, both its own and from third parties.</p>
+
+        <h3>2. ACCEPTANCE OF TERMS</h3>
+        <p>By accessing, browsing, or using the Platform, the user expressly accepts these Terms and Conditions. If you do not agree, you must refrain from using the site.</p>
+
+        <h3>3. USE OF THE PLATFORM</h3>
+        <p>The user agrees to:</p>
+        <ul>
+          <li>Use the site lawfully and in accordance with applicable regulations.</li>
+          <li>Not perform activities that could damage, overload, or affect the operation of the site.</li>
+          <li>Not use the content for illegal or unauthorized purposes.</li>
+        </ul>
+
+        <h3>4. CONTENT AND PURPOSE</h3>
+        <p>The Platform offers content that is:</p>
+        <ul>
+          <li>Informative (news, analysis, trends)</li>
+          <li>Educational and technological</li>
+          <li>Commercial (advertising, partnerships, promotions)</li>
+        </ul>
+        <p>The content is of a general nature and may not be updated or may contain errors. It does not constitute professional advice.</p>
+
+        <h3>5. INTELLECTUAL PROPERTY</h3>
+        <p>All content (texts, designs, logos, images, brands) belongs to CORGAX or has usage rights. Its reproduction, distribution, or modification without prior authorization is prohibited.</p>
+
+        <h3>6. THIRD-PARTY LINKS</h3>
+        <p>The Platform may include links to external sites. CORGAX does not control or take responsibility for the content, services, or policies of such sites.</p>
+
+        <h3>7. ADVERTISING AND SPONSORED CONTENT</h3>
+        <p>CORGAX may display third-party advertising, sponsored content, and commercial alliances. The veracity, quality, or results of advertised products or services are not guaranteed. The commercial relationship is between the user and the third party.</p>
+
+        <h3>8. LIMITATION OF LIABILITY</h3>
+        <p>CORGAX shall not be liable for:</p>
+        <ul>
+          <li>Errors or omissions in the content.</li>
+          <li>Decisions made based on published information.</li>
+          <li>Damages arising from the use or inability to use the site.</li>
+          <li>Technical failures or interruptions.</li>
+        </ul>
+
+        <h3>9. USER ACCOUNTS (IF APPLICABLE)</h3>
+        <p>If the user creates an account, they will be responsible for the confidentiality of their data and must provide truthful information. CORGAX may suspend accounts that violate these terms.</p>
+
+        <h3>10. MODIFICATIONS AND APPLICABLE LAW</h3>
+        <p>CORGAX reserves the right to modify these Terms at any time. Changes will take effect upon their publication. These Terms are governed by the applicable laws in the country of operation of the site owner.</p>
+
+        <h3>11. SPECIFIC CONDITIONS BY PLATFORM</h3>
+        <p><strong>CORGAX24 (News):</strong> The content is informative and may include opinions. Absolute accuracy or permanent updating is not guaranteed.<br>
+        <strong>CORGAX Prime:</strong> May include exclusive content or digital services. Access and use may be subject to additional conditions.<br>
+        <strong>CORGAX Tech / Space (Blogs):</strong> Educational and informative content. Does not constitute technical or professional advice.</p>
+      </div>
+    </div>
+
+    <!-- CARD 2: BUSINESS / CLIENTS -->
+    <div class="legal-card">
+      <div class="card-title">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        Service Agreement – Corporate
+      </div>
+      <div class="legal-text">
+        <h3>1. PURPOSE</h3>
+        <p>This document establishes the general conditions under which CORGAX offers collaboration, advertising, dissemination, and strategic alliance services to third parties (hereinafter, "the Client"). This agreement is considered valid once both parties confirm the collaboration by any means (email, message, or digital acceptance).</p>
+
+        <h3>2. NATURE OF THE AGREEMENT</h3>
+        <p>Collaborations managed by CORGAX are commercial and communicative in nature. They are agreed upon previously in a personalized manner and do not constitute an employment relationship, partnership, or legal representation.</p>
+
+        <h3>3. SERVICES OFFERED</h3>
+        <p>CORGAX may offer, among others:</p>
+        <ul>
+          <li>Publication of sponsored content.</li>
+          <li>Advertising spaces on its platforms.</li>
+          <li>Dissemination in digital media.</li>
+          <li>Integration into the CORGAX ecosystem.</li>
+        </ul>
+        <p>Specific details will be defined in each prior agreement.</p>
+
+        <h3>4. ACCEPTANCE OF SERVICE</h3>
+        <p>A service is considered accepted when the Client confirms their interest in writing and the basic terms (content, time, price) are agreed upon. A formal contract is not necessary to validate the agreement.</p>
+
+        <h3>5. CLIENT'S RESPONSIBILITY</h3>
+        <p>The Client guarantees that they have rights to the provided content, the information is truthful and does not infringe legal norms, and their service or product complies with applicable regulations. The Client assumes full responsibility for the content they request to publish.</p>
+
+        <h3>6. CONTENT AND PUBLICATION</h3>
+        <p>CORGAX reserves the right to adapt the content to its editorial format, reject content it considers inappropriate or risky, and identify content as sponsored when applicable.</p>
+
+        <h3>7. PAYMENTS AND LIMITATION OF LIABILITY</h3>
+        <p>In the case of paid services, the amount and conditions will be defined previously. CORGAX does not guarantee specific commercial results, performance of campaigns or publications, or direct impact on sales. The service is limited to the agreed dissemination and visibility.</p>
+
+        <h3>8. MODIFICATIONS, CANCELLATION, AND CONFIDENTIALITY</h3>
+        <p>Conditions can be adjusted upon agreement between both parties. CORGAX may cancel or reject collaborations in case of breach of conditions, inappropriate or illegal content, or reputational risk. Both parties agree not to disclose sensitive information shared during the collaboration, unless authorized.</p>
+        <p>For agreements, proposals, or commercial inquiries, please refer to our <a href="contacto-empresarial">Corporate Area</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <a href="/" class="logo" style="background:transparent; padding:0; height:auto; pointer-events: none;">
+        <svg class="logo-svg-full" viewBox="0 0 128 26" xmlns="http://www.w3.org/2000/svg">
+          <g stroke="currentColor" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 15,7 A 5,5 0 0,0 10,2 L 7,2 A 5,5 0 0,0 2,7 L 2,19 A 5,5 0 0,0 7,24 L 10,24 A 5,5 0 0,0 15,19" />
+            <path d="M 24,7 A 5,5 0 0,1 29,2 L 32,2 A 5,5 0 0,1 37,7 L 37,19 A 5,5 0 0,1 32,24 L 29,24 A 5,5 0 0,1 24,19 Z" />
+            <path d="M 46,24 L 46,2 L 53,2 A 5.5,5.5 0 0,1 58.5,7.5 A 5.5,5.5 0 0,1 53,13 L 46,13 M 51,13 L 58,24" />
+            <path d="M 79,7 A 5,5 0 0,0 74,2 L 71,2 A 5,5 0 0,0 66,7 L 66,19 A 5,5 0 0,0 71,24 L 74,24 A 5,5 0 0,0 79,19 L 79,13 L 73,13" />
+          </g>
+          <g stroke="var(--brand-red)" fill="none" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M 88,24 L 95.5,2 L 103,24" />
+            <path d="M 111,2 L 126,24 M 126,2 L 111,24" />
+          </g>
+        </svg>
+      </a>
+      <p style="margin-top: 6px;">Digital structure focused on organizing and distributing news, analysis, and technology through specialized platforms.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <h4>Ecosystem</h4>
+        <a href="corgax24">Corgax24</a>
+        <a href="corgax-prime">Corgax Prime</a>
+        <a href="corgax-space">Corgax Space</a>
+      </div>
+      <div class="link-group">
+        <h4>Organization</h4>
+        <a href="about-us">About us</a>
+        <a href="contacto-personal">Personal Contact</a>
+        <a href="contacto-empresarial">Business Contact</a>
+      </div>
+      <div class="link-group">
+        <h4>Policies</h4>
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="terms-of-use" class="active-link" style="color: var(--brand-red) !important;">Terms of Use</a>
+      </div>
+      <div class="link-group signature-group">
+        <span class="project-label">A project by</span>
+        <a href="https://corgiva.com" target="_blank" rel="noopener noreferrer" class="corgiva-signature notranslate" translate="no">Corgiva <span>Group</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copyright">© <span id="year"></span> CORGAX — All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+const header = document.getElementById('mainHeader');
+const dropdown = document.getElementById('contactoDropdown');
+const dropdownBtn = document.getElementById('nav-contacto');
+
+dropdownBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('open'); });
+document.addEventListener('click', (e) => { if (dropdown && !dropdown.contains(e.target)) dropdown.classList.remove('open'); });
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const themeBtn = document.getElementById("theme");
+themeBtn.onclick = () => {
+  document.body.classList.toggle("light");
+  try { localStorage.setItem("corgax_theme", document.body.classList.contains("light") ? "light" : "dark"); } catch (e) {}
+};
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) header.classList.add('scrolled');
+  else header.classList.remove('scrolled');
+});
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("nav-active");
+  menuBtn.classList.toggle("nav-active");
+  header.classList.toggle("menu-open");
+  document.body.style.overflow = navLinks.classList.contains("nav-active") ? "hidden" : "";
+});
+</script>
+</body>
+</html>
