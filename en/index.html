@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>CORGAX | Hub Under Redevelopment</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        corgax: {
+                            red: '#D92128',
+                            dark: '#070E21',
+                            light: '#FFFFFF'
+                        }
+                    },
+                    screens: {
+                        'xs': {'max': '350px'},
+                        'sm': '550px',
+                        'md': '880px',
+                        'lg': '1050px',
+                        'xl': '1280px'
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
+                        'fade-in': 'fadeIn 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #F8FAFC; 
+            --card-bg: #FFFFFF; 
+            --card-border: #E2E8F0;
+            --circle-solid: rgba(15, 23, 42, 0.04); 
+            --circle-line: rgba(15, 23, 42, 0.12);
+        }
+        .dark {
+            --bg-color: #070E21;
+            --card-bg: #0C1427;
+            --card-border: rgba(255, 255, 255, 0.06);
+            --circle-solid: rgba(255, 255, 255, 0.035); 
+            --circle-line: rgba(255, 255, 255, 0.05);
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--bg-color); 
+        }
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .geom-solid {
+            background-color: var(--circle-solid);
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .geom-line {
+            border: 1px solid var(--circle-line);
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+        }
+        .bento-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+        }
+        .dark .bento-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 50%, transparent 100%);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(156, 163, 175, 0.5);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative text-gray-800 dark:text-gray-100 selection:bg-[#D92128] selection:text-white overflow-hidden">
+
+    <!-- Iframe invisible para el envío seguro a Brevo (La magia) -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+    <!-- CONTROLES FLOTANTES -->
+    <div class="fixed top-6 right-6 lg:top-8 lg:right-12 z-[10000] flex items-center gap-2">
+        <a href="reforma_completo.html" class="w-10 h-10 flex items-center justify-center rounded-lg text-xs font-heading font-black bg-white dark:bg-[#070E21] border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all shadow-sm">ES</a>
+        <button id="theme-toggle-modal" class="w-10 h-10 flex items-center justify-center rounded-lg text-sm bg-white dark:bg-[#070E21] border border-gray-200 dark:border-white/10 text-gray-500 dark:text-gray-400 hover:text-[#D92128] dark:hover:text-[#D92128] transition-all shadow-sm">
+            <i id="theme-icon-modal" class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+
+    <!-- VELO Y MODAL CORPORATIVO -->
+    <div class="fixed inset-0 z-[9999] bg-white/30 dark:bg-[#070E21]/40 backdrop-blur-[8px] overflow-y-auto transition-all">
+        <div class="flex items-center justify-center min-h-full p-4 py-20 md:p-6 md:py-12">
+            
+            <div class="w-full max-w-md project-card rounded-3xl relative flex flex-col shadow-2xl border border-gray-200 dark:border-white/10 overflow-visible">
+                
+                <div class="absolute top-0 left-0 w-full h-2 bg-[#D92128] z-20 rounded-t-3xl"></div>
+                
+                <div class="px-8 pb-10 pt-2 flex flex-col items-center text-center relative z-10">
+                    <div class="w-full flex justify-center">
+                        <img src="https://corgax.com/imag/logo/corgaxsinfondopositivo.png" alt="Corgax" draggable="false" 
+                             class="block dark:hidden max-h-full max-w-full relative z-10 object-contain select-none
+                                    h-[160px] w-[130px] mt-[-25px] mb-[-25px]
+                                    sm:h-[150px] sm:w-[150px] sm:mt-[-30px] sm:mb-[-30px]
+                                    md:h-[170px] md:w-[170px] md:mt-[-35px] md:mb-[-35px]
+                                    lg:h-[185px] lg:w-[220px] lg:mt-[-40px] lg:mb-[-60px]" />
+                        <img src="https://corgax.com/imag/logo/corgaxsinfondo.png" alt="Corgax" draggable="false" 
+                             class="hidden dark:block max-h-full max-w-full relative z-10 object-contain select-none
+                                    h-[160px] w-[130px] mt-[-25px] mb-[-25px]
+                                    sm:h-[150px] sm:w-[150px] sm:mt-[-30px] sm:mb-[-30px]
+                                    md:h-[170px] md:w-[170px] md:mt-[-35px] md:mb-[-35px]
+                                    lg:h-[185px] lg:w-[220px] lg:mt-[-40px] lg:mb-[-60px]" />
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-heading font-black uppercase tracking-widest mb-4 text-gray-900 dark:text-white leading-tight relative z-20">
+                        System in<br><span class="text-[#D92128]">Restructuring</span>
+                    </h2>
+                    
+                    <!-- ENGLISH INSTITUTIONAL TEXT -->
+                    <div class="text-[11px] text-gray-500 dark:text-gray-400 mb-8 leading-relaxed space-y-3 relative z-20 text-center px-1">
+                        <p>
+                            <strong class="text-gray-700 dark:text-gray-300 font-bold">CORGAX</strong> is a digital media and content brand focused on the organization, development, and distribution of information.
+                        </p>
+                        <p>
+                            We are currently undergoing a phase of structural and technological redevelopment. Driven by a long-term professional vision, this process aims to build a solid, accessible, and constantly evolving digital ecosystem.
+                        </p>
+                        <p>
+                            We keep our channels open to new opportunities, fostering transparent relationships with those looking to integrate into our corporate consolidation.
+                        </p>
+                    </div>
+
+                    <!-- CONTACT SECTION & DROPDOWN -->
+                    <div class="w-full text-left relative z-20">
+                        <div class="flex items-center justify-between mb-2">
+                            <label class="text-[9px] uppercase tracking-[0.2em] font-bold text-gray-800 dark:text-gray-300 flex items-center gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-[#D92128] animate-pulse"></span>
+                                Contact Channels
+                            </label>
+                            <i class="fa-solid fa-lock text-[10px] text-gray-400"></i>
+                        </div>
+                        
+                        <div class="relative w-full mb-3">
+                            <button type="button" id="custom-select-btn" class="w-full flex items-center justify-between bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg px-4 py-3 text-xs text-gray-500 dark:text-gray-400 focus:outline-none transition-colors shadow-sm font-medium">
+                                <span id="custom-select-text">Select reason for inquiry...</span>
+                                <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300" id="custom-select-icon"></i>
+                            </button>
+                            
+                            <div id="custom-select-dropdown" class="absolute top-[100%] left-0 w-full mt-1 bg-white dark:bg-[#0C1427] border border-gray-200 dark:border-white/10 rounded-lg shadow-xl z-50 hidden opacity-0 transition-opacity duration-200 overflow-hidden">
+                                <!-- ENGLISH DROPDOWN OPTIONS -->
+                                <ul class="max-h-56 overflow-y-auto custom-scrollbar py-1 text-xs font-medium text-gray-700 dark:text-gray-300">
+                                    <li class="px-4 py-3 hover:bg-gray-100 dark:hover:bg-white/5 cursor-pointer transition-colors" data-value="anunciarse">Advertise</li>
+                                    <li class="px-4 py-3 hover:bg-gray-100 dark:hover:bg-white/5 cursor-pointer transition-colors" data-value="colaboraciones">Collaborations</li>
+                                    <li class="px-4 py-3 hover:bg-gray-100 dark:hover:bg-white/5 cursor-pointer transition-colors" data-value="proyectos">Projects</li>
+                                    <li class="px-4 py-3 hover:bg-gray-100 dark:hover:bg-white/5 cursor-pointer transition-colors" data-value="consultas">General Inquiries</li>
+                                    <li class="px-4 py-3 hover:bg-gray-100 dark:hover:bg-white/5 font-bold cursor-pointer transition-colors border-t border-gray-100 dark:border-white/5" data-value="inversion">Investment, Partnerships, and Business Development</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- FORM CONNECTED TO BREVO (Names remain in Spanish to match your DB) -->
+                        <form id="standard-form-fields" class="flex flex-col gap-3 animate-fade-in" method="POST" target="hidden_iframe" action="https://a567fc20.sibforms.com/serve/MUIFAKaUBtp5U_h0nhH7DQZCqZk8HijAV4AwJk_K2QjscHLN9SY0i0O-N9jPdPQhkpFpqGonZd4KpRzk3-kpFK4m81_X9pZ928igPRNlLChw60aADBGeVoozFAGFUU6e7mNZrtaUB65rJNnCXwomuKrtu1L0LbTYwmLvJpskfMRlK2-IhEzxMjS659OqveaxRrDcB0uwfLS3HHZwbg==" data-type="subscription" novalidate>
+                            
+                            <!-- 1. Name Field (Sent to NOMBRE in Brevo) -->
+                            <div>
+                                <input type="text" id="NOMBRE" name="NOMBRE" placeholder="Company / Organization Name" maxlength="200" autocomplete="off" required
+                                       class="w-full bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg px-4 py-3 text-xs text-gray-700 dark:text-gray-300 focus:outline-none focus:border-gray-400 transition-colors shadow-sm placeholder:text-gray-400">
+                                <!-- Name Error Message -->
+                                <p id="error-nombre-alert" class="hidden mt-1.5 text-[10px] text-red-500 font-semibold px-2">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> This field is required.
+                                </p>
+                            </div>
+                            
+                            <!-- 2. Email Field (Sent to EMAIL in Brevo) -->
+                            <div>
+                                <input type="email" id="EMAIL" name="EMAIL" placeholder="Corporate email" autocomplete="off" required
+                                       class="w-full bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg px-4 py-3 text-xs text-gray-700 dark:text-gray-300 focus:outline-none focus:border-gray-400 transition-colors shadow-sm placeholder:text-gray-400">
+                                <!-- Email Error Message -->
+                                <p id="error-alert" class="hidden mt-1.5 text-[10px] text-red-500 font-semibold px-2">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> Please enter a valid corporate email.
+                                </p>
+                            </div>
+
+                            <!-- 3. Subject Field (Sent to APELLIDOS in Brevo) -->
+                            <div>
+                                <input type="text" id="APELLIDOS" name="APELLIDOS" placeholder="Subject or brief proposal" maxlength="490" autocomplete="off" required
+                                       class="w-full bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg px-4 py-3 text-xs text-gray-700 dark:text-gray-300 focus:outline-none focus:border-gray-400 transition-colors shadow-sm placeholder:text-gray-400">
+                                <!-- Subject Error Message -->
+                                <p id="error-asunto-alert" class="hidden mt-1.5 text-[10px] text-red-500 font-semibold px-2">
+                                    <i class="fa-solid fa-circle-exclamation mr-1"></i> Please enter the subject of your message.
+                                </p>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" id="submit-btn" class="w-full mt-1 bg-gray-900 dark:bg-white text-white dark:text-[#070E21] hover:bg-[#D92128] dark:hover:bg-[#D92128] dark:hover:text-white py-3.5 rounded-lg transition-all shadow-md font-bold uppercase tracking-wider font-heading text-xs flex justify-center items-center gap-2 group">
+                                <span id="btn-text">Submit Proposal</span>
+                                <i id="btn-icon" class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                                <!-- Hidden Spinner -->
+                                <svg id="btn-loader" class="hidden w-3.5 h-3.5 ml-1 animate-spin" viewBox="0 0 512 512" fill="currentColor">
+                                    <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
+                                </svg>
+                            </button>
+
+                            <!-- Hidden Security Fields -->
+                            <input type="text" name="email_address_check" value="" class="hidden" tabindex="-1">
+                            <!-- Change to English locale for Brevo if they support it, otherwise leave as is -->
+                            <input type="hidden" name="locale" value="en">
+                        </form>
+
+                        <!-- Investment Redirect Message -->
+                        <div id="corgiva-redirect-msg" class="hidden flex-col items-center text-center p-5 bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg animate-fade-in-up mt-2">
+                            <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-white/10 text-gray-700 dark:text-gray-300 flex items-center justify-center mb-3">
+                                <i class="fa-solid fa-building-shield"></i>
+                            </div>
+                            <h4 class="text-xs font-bold text-gray-900 dark:text-white mb-2 font-heading uppercase tracking-widest">Operational Headquarters</h4>
+                            <p class="text-[11px] text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                                The administration of partners, strategic investments, and asset management is exclusively overseen by the operational division of <strong class="text-gray-800 dark:text-gray-200">Corgiva Group</strong>.
+                            </p>
+                            <a href="https://corgiva.com" target="_blank" class="w-full bg-gray-900 dark:bg-white text-white dark:text-[#070E21] hover:bg-[#D92128] dark:hover:bg-[#D92128] dark:hover:text-white py-3 rounded-lg transition-all shadow-md font-bold uppercase tracking-wider font-heading text-[10px] flex justify-center items-center gap-2 group">
+                                Contact via Corgiva.com
+                                <i class="fa-solid fa-external-link-alt text-[9px] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform"></i>
+                            </a>
+                        </div>
+
+                        <!-- SUCCESS MESSAGE -->
+                        <div id="success-msg" class="hidden flex-col items-center text-center p-6 bg-gray-50 dark:bg-[#070E21] border border-gray-200 dark:border-white/10 rounded-lg animate-fade-in-up mt-2">
+                            <div class="w-12 h-12 rounded-full border-2 border-[#D92128] text-[#D92128] flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-check text-xl"></i>
+                            </div>
+                            <h4 class="text-xs font-bold text-gray-900 dark:text-white mb-2 font-heading uppercase tracking-widest">Receipt Confirmed</h4>
+                            <p class="text-[11px] text-gray-600 dark:text-gray-400 leading-relaxed">
+                                Your proposal has successfully entered our corporate system. The assigned department will evaluate your request and issue an official response to your email shortly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-black/20 border-t border-gray-100 dark:border-white/5 p-4 text-center relative z-20 rounded-b-3xl">
+                    <span class="text-[9px] uppercase tracking-[0.2em] text-gray-400 font-bold">A project by Corgiva Group</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BACKGROUND WEBSITE (BLURRED) -->
+    <div class="relative w-full h-full pointer-events-none select-none" aria-hidden="true">
+        <div class="fixed inset-0 z-0 overflow-hidden flex items-center justify-center">
+            <div class="geom-solid w-[70vw] h-[70vw] md:w-[60vw] md:h-[60vw] absolute -top-[30%] -left-[20%]"></div>
+            <div class="geom-line w-[80vw] h-[80vw] md:w-[45vw] md:h-[45vw] absolute -top-[15%] -right-[15%]"></div>
+            <div class="geom-solid w-[100vw] h-[100vw] md:w-[75vw] md:h-[75vw] absolute -bottom-[45%] -right-[15%]"></div>
+            <div class="geom-line w-[50vw] h-[50vw] md:w-[35vw] md:h-[35vw] absolute top-[40%] -left-[10%]"></div>
+        </div>
+        <header class="fixed top-0 left-0 w-full h-20 bg-white dark:bg-[#070E21] border-b border-gray-200 dark:border-white/10 z-50">
+            <div class="w-full max-w-[1300px] mx-auto px-6 lg:px-12 h-full flex justify-between items-center">
+                <div class="flex items-center justify-center py-4">
+                    <img src="https://corgax.com/imag/logo/corgaxsinfondopositivo.png" alt="" class="h-auto w-[120px] object-contain block dark:hidden" />
+                    <img src="https://corgax.com/imag/logo/corgaxsinfondo.png" alt="" class="h-auto w-[120px] object-contain hidden dark:block" />
+                </div>
+                <nav class="hidden md:flex items-center h-full mr-4">
+                    <div class="flex items-center gap-1">
+                        <span class="px-4 py-2 text-sm font-bold uppercase tracking-wider text-gray-900 dark:text-white">Home</span>
+                        <span class="px-4 py-2 text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Corgax24</span>
+                        <span class="px-4 py-2 text-sm font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">Corgax Prime</span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main class="w-full mx-auto px-6 lg:px-12 flex-grow flex flex-col relative z-10 pt-28 pb-16 transform -translate-y-8">
+            <div class="flex flex-col items-center text-center w-full max-w-4xl mx-auto mb-16 mt-4">
+                <div class="w-full flex justify-center mb-8">
+                    <img src="https://corgax.com/imag/logo/corgaxsinfondopositivo.png" alt="" class="h-auto w-[350px] object-contain block dark:hidden" />
+                    <img src="https://corgax.com/imag/logo/corgaxsinfondo.png" alt="" class="h-auto w-[350px] object-contain hidden dark:block" />
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-xl font-medium max-w-3xl leading-relaxed mb-8">
+                    Core platform organizing information, analysis, and technology into independent, adaptable spaces.
+                </p>
+                <div class="bg-gray-900 dark:bg-white text-white dark:text-[#070E21] px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-sm">
+                    Explore Ecosystem
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-[1240px] mx-auto">
+                <div class="md:col-span-2 md:row-span-2 project-card rounded-3xl overflow-hidden relative flex flex-col justify-end p-8 min-h-[350px] md:min-h-[500px]">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&q=80&w=1200')"></div>
+                    <div class="absolute inset-0 bento-overlay"></div>
+                </div>
+                <div class="md:col-span-1 md:row-span-1 project-card rounded-3xl overflow-hidden relative flex flex-col justify-end p-6 min-h-[300px]">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&q=80&w=800')"></div>
+                    <div class="absolute inset-0 bento-overlay"></div>
+                </div>
+                <div class="md:col-span-1 md:row-span-1 project-card rounded-3xl overflow-hidden relative flex flex-col justify-end p-6 min-h-[300px]">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=800')"></div>
+                    <div class="absolute inset-0 bento-overlay"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        const themeToggleBtn = document.getElementById('theme-toggle-modal');
+        const themeIcon = document.getElementById('theme-icon-modal');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if (htmlElement.classList.contains('dark')) {
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+
+        // Dropdown variables
+        const selectBtn = document.getElementById('custom-select-btn');
+        const selectText = document.getElementById('custom-select-text');
+        const selectIcon = document.getElementById('custom-select-icon');
+        const selectDropdown = document.getElementById('custom-select-dropdown');
+        const options = selectDropdown.querySelectorAll('li');
+        
+        // Form and alert variables
+        const standardForm = document.getElementById('standard-form-fields');
+        const corgivaMsg = document.getElementById('corgiva-redirect-msg');
+        const successMsg = document.getElementById('success-msg');
+        
+        const nombreInput = document.getElementById('NOMBRE');
+        const errorNombreAlert = document.getElementById('error-nombre-alert');
+        
+        const emailInput = document.getElementById('EMAIL');
+        const errorAlert = document.getElementById('error-alert'); 
+        
+        const apellidosInput = document.getElementById('APELLIDOS');
+        const errorAsuntoAlert = document.getElementById('error-asunto-alert');
+
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnIcon = document.getElementById('btn-icon');
+        const btnLoader = document.getElementById('btn-loader');
+
+        // Function to clean general view
+        function hideAllPanels() {
+            standardForm.classList.add('hidden');
+            corgivaMsg.classList.add('hidden');
+            corgivaMsg.classList.remove('flex');
+            successMsg.classList.add('hidden');
+            successMsg.classList.remove('flex');
+        }
+
+        // Dropdown logic
+        selectBtn.addEventListener('click', (e) => {
+            if(selectBtn.classList.contains('pointer-events-none')) return;
+            e.stopPropagation();
+            const isHidden = selectDropdown.classList.contains('hidden');
+            
+            if (isHidden) {
+                selectDropdown.classList.remove('hidden');
+                setTimeout(() => selectDropdown.classList.remove('opacity-0'), 10);
+                selectIcon.classList.add('rotate-180');
+                selectBtn.classList.add('border-gray-400', 'dark:border-gray-500');
+            } else {
+                closeDropdown();
+            }
+        });
+
+        options.forEach(option => {
+            option.addEventListener('click', (e) => {
+                const value = e.target.getAttribute('data-value');
+                const text = e.target.innerText;
+                
+                selectText.innerText = text;
+                selectText.classList.remove('text-gray-500', 'dark:text-gray-400');
+                selectText.classList.add('text-gray-900', 'dark:text-white', 'font-semibold');
+                
+                closeDropdown();
+                hideAllPanels();
+
+                // Restore button and input state on category change
+                btnText.textContent = "Submit Proposal";
+                btnIcon.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
+                submitBtn.disabled = false;
+                
+                nombreInput.disabled = false;
+                emailInput.disabled = false;
+                apellidosInput.disabled = false;
+                
+                nombreInput.value = '';
+                emailInput.value = '';
+                apellidosInput.value = '';
+                
+                // Clear active errors
+                clearError(nombreInput, errorNombreAlert);
+                clearError(emailInput, errorAlert);
+                clearError(apellidosInput, errorAsuntoAlert);
+
+                if (value === 'inversion') {
+                    corgivaMsg.classList.remove('hidden');
+                    corgivaMsg.classList.add('flex');
+                } else {
+                    standardForm.classList.remove('hidden');
+                }
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!selectBtn.contains(e.target) && !selectDropdown.contains(e.target)) {
+                closeDropdown();
+            }
+        });
+
+        function closeDropdown() {
+            selectDropdown.classList.add('opacity-0');
+            selectIcon.classList.remove('rotate-180');
+            selectBtn.classList.remove('border-gray-400', 'dark:border-gray-500');
+            setTimeout(() => selectDropdown.classList.add('hidden'), 200);
+        }
+
+        // --- VALIDATION AND ERROR HANDLING FUNCTIONS ---
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+            return re.test(email);
+        }
+
+        function triggerError(inputElement, alertElement) {
+            alertElement.classList.remove('hidden');
+            inputElement.classList.add('border-red-500', 'dark:border-red-500');
+            
+            // Visual vibration effect on input
+            inputElement.style.transform = 'translateX(4px)';
+            setTimeout(() => inputElement.style.transform = 'translateX(-4px)', 100);
+            setTimeout(() => inputElement.style.transform = 'translateX(0)', 200);
+        }
+
+        function clearError(inputElement, alertElement) {
+            alertElement.classList.add('hidden');
+            inputElement.classList.remove('border-red-500', 'dark:border-red-500');
+        }
+
+        // --- BREVO IFRAME SUBMISSION HANDLING ---
+
+        standardForm.addEventListener('submit', function(e) {
+            const nombreValue = nombreInput.value.trim();
+            const emailValue = emailInput.value.trim();
+            const apellidosValue = apellidosInput.value.trim();
+            let hasError = false;
+
+            // 1. Validate Name
+            if (!nombreValue) {
+                triggerError(nombreInput, errorNombreAlert);
+                hasError = true;
+            } else {
+                clearError(nombreInput, errorNombreAlert);
+            }
+
+            // 2. Validate Email
+            if (!isValidEmail(emailValue)) {
+                triggerError(emailInput, errorAlert);
+                hasError = true;
+            } else {
+                clearError(emailInput, errorAlert);
+            }
+
+            // 3. Validate Subject
+            if (!apellidosValue) {
+                triggerError(apellidosInput, errorAsuntoAlert);
+                hasError = true;
+            } else {
+                clearError(apellidosInput, errorAsuntoAlert);
+            }
+
+            // Stop submission if there's an error
+            if (hasError) {
+                e.preventDefault();
+                return;
+            }
+
+            // UI Loading (Processing Button)
+            btnText.textContent = "Processing...";
+            btnIcon.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+            
+            // Disable fields shortly after submit
+            setTimeout(() => {
+                nombreInput.disabled = true;
+                emailInput.disabled = true;
+                apellidosInput.disabled = true;
+                submitBtn.disabled = true;
+            }, 50);
+
+            // Simulate Brevo response and show success card
+            setTimeout(() => {
+                hideAllPanels();
+                successMsg.classList.remove('hidden');
+                successMsg.classList.add('flex');
+                
+                // Disable selector temporarily
+                selectBtn.classList.add('pointer-events-none', 'opacity-50');
+                selectBtn.classList.remove('cursor-pointer');
+            }, 1200);
+        });
+
+        // Automatically clear error alerts as user types
+        nombreInput.addEventListener('input', function() { clearError(nombreInput, errorNombreAlert); });
+        emailInput.addEventListener('input', function() { clearError(emailInput, errorAlert); });
+        apellidosInput.addEventListener('input', function() { clearError(apellidosInput, errorAsuntoAlert); });
+
+    </script>
+</body>
+</html>
